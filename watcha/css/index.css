@@ -157,12 +157,12 @@ input:focus:-moz-placeholder {
 input:focus::-webkit-input-placeholder {
 	color: #f2f2f2;
 }
-#profile, {
+.profile, {
 	padding-right: 0;
 	padding-bottom: 50px;
 }
 
-#profile>div {
+.profile>div {
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
@@ -174,11 +174,11 @@ input:focus::-webkit-input-placeholder {
 	background-image: url("../img/avatar.png");
 	background-size: cover;
 }
-#profile>p:after {
+.profile>p:after {
 	content: "▼";
 	font-size: 11px;
 }
-#profile>ul {
+.profile>ul {
 	display: none;
 	background-color: #000;
 	width: 110px;
@@ -187,21 +187,18 @@ input:focus::-webkit-input-placeholder {
     left: -20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-#profile>ul.active {
-	display: block;	
-}
-#profile>ul>li {
+.profile>ul>li {
 	display: block;
 	padding:0;
 }
-#profile>ul>li:hover {
+.profile>ul>li:hover {
 	background-color: #2E2E2E;
 }
-#profile>ul>li>p {
+.profile>ul>li>p {
 	padding: 1px 5px;
 }
 
-#profile>ul>li:nth-child(3) {
+.profile>ul>li:nth-child(3) {
 	border-top: 1px  solid #2E2E2E;
 	border-bottom: 1px  solid #2E2E2E;
 }
@@ -756,7 +753,7 @@ div[id*=s-]>.swiper-wrapper>.swiper-slide {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.5);
     display: none;
 }
 #popup-info>#text-wrap>p>span {
@@ -836,7 +833,7 @@ div[class*=popup-thumb-img-]>p {
 	#nav-mo {
 		display: block;
 	}
-	#profile.mo>ul {
+	.profile.mo>ul {
 		left: 75%;		
 	}
 
