@@ -243,12 +243,9 @@ function showHeader() {
 function hoverProfile() {
 	$(".profile").each(function(i) {	
 		$(this).hover(function(){			
-			 $(this).children('ul').slideDown();		
+			 $(this).children('ul').slideDown();	
 		},function() {
-			$(this).children('ul').slideUp()
-			$(this).children('ul').mouseleave(function(){
-				$(this).slideUp()
-			});
+			$(this).children('ul').delay(200).slideUp()			
 		}); 
 	});
 };  
