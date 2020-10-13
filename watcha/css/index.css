@@ -157,9 +157,9 @@ input:focus:-moz-placeholder {
 input:focus::-webkit-input-placeholder {
 	color: #f2f2f2;
 }
-.profile, {
+.profile {
 	padding-right: 0;
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 
 .profile>div {
