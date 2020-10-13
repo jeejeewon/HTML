@@ -24,7 +24,8 @@ $(function() {
 				slidersPerView: 1,
 				speed: 300,		
 				loop: false,					    
-		});
+		});		
+		$("video").trigger("pause");		
 		setTimeout(function() {
 			$("div[class*=popup-thumb-img-]").each(function(i) {		
 				$(this).stop().animate({	
@@ -32,7 +33,7 @@ $(function() {
 					top: '0'
 				}, 600 * (i + 0.5));					
 			});	
-		},800,"easeOutElastic"); clearTimeout();	
+		},800); clearTimeout();	
 	});	
 
 	$("#popup-close").click(function(){		
@@ -46,7 +47,8 @@ $(function() {
 		$("div[class*=popup-thumb-img-]").css({
 			opacity: '0',
 			top: '20px'
-		});		
+		});
+		$("video").trigger("play");
 	});		
 	
 	hoverProfile()
