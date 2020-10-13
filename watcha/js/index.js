@@ -32,13 +32,13 @@ $(function() {
 					top: '0'
 				}, 600 * (i + 0.5));					
 			});	
-		},800); clearTimeout();	
+		},800,"easeOutElastic"); clearTimeout();	
 	});	
 
 	$("#popup-close").click(function(){		
 		$("#popup").animate({
 			width: '0',
-			opacity: '0'
+			opacity: '0.9'
 		},800);
 		$("#popup").slideToggle(200);
 		$("#popup-close").hide(500);
