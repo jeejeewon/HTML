@@ -1,0 +1,122 @@
+* {
+	 padding: 0;
+	 margin: 0;
+	 box-sizing: 0;
+}
+html, body {
+	height: 100%;
+	position: relative;		
+}
+#bg {
+	height: 100%;
+	width: auto;
+	background: linear-gradient(45deg, #F78181, #F3F781, #BEF781, #81F79F, #81F7F3);
+	background-size: 1000% ;	
+	animation-name: gradient;	
+	animation-duration: 12s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-delay: 1s;
+	z-index: -2;
+	opacity: 0.4;
+}
+
+#wrap {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+	width: 30%;
+	height: 50px;
+	opacity: 0.2;
+	transition: 0.3s;
+	border: 1px solid gold;
+	border-radius: 5px;
+	content: "";
+	clear: both;
+	display: table;
+	overflow: hidden;
+}
+#wrap:hover {	
+	opacity: 1;
+}
+input {
+	border: 0;
+	width: 74%;	
+	height: 100%;
+	background-color: gold;
+	opacity: 0.5;
+	padding-left: 3%;
+	font-size: 16px;
+	float: left;
+}
+input:focus, button:focus {
+	outline: none;
+}
+input::placeholder {
+	color: white;
+}
+input.error::placeholder {
+	color: red;
+}
+button {
+	width: 23%;
+	margin-left: -4%;	
+	border: 0;
+	background-color: gold;
+	height: 100%;
+	color: white;
+	float: right;
+	cursor: pointer;
+}
+video {
+	position: fixed;
+	height: 100%;
+	width: auto;
+	z-index: -1;
+}
+#bg1 {
+	display: none;
+
+}
+#bg1.onclick {
+	display: block;
+	
+}
+#bg2 {
+	display: none;
+
+}
+#bg2.onclick {
+	display: block;
+
+}
+#bg3 {
+	display: none;
+
+}
+#bg3.onclick {
+	display: block;
+
+}
+#bg4 {
+	display: none;
+
+}
+#bg4.onclick {
+	display: block;
+
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

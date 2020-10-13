@@ -1,0 +1,405 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body::-webkit-scrollbar {
+	display: none;
+	
+}
+.container {
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+h2 {
+	padding-top: 50px; 
+	padding-bottom: 18px; 
+	font-weight: lighter;
+	font-size: 35px;
+	text-transform: capitalize;
+	color: #6E6E6E;
+}
+p {
+	font-size: 15px;
+	font-weight: lighter;
+	color: #6E6E6E;
+}
+
+/* Header */
+#header {
+	width: 100%;
+	height: 75px;
+	background: #2C3E50;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+}
+#logo {	
+	font-size: 27px;
+	width: 160px;
+	font-weight: 800;
+	color: white;
+	line-height: 70px;
+}
+#header_nav {
+		width: 800px;
+		color: white;
+		line-height: 70px;
+		font-size: 14px;
+}
+#header_nav>ul {	
+	float: right;
+	list-style: none;	
+}
+#header_nav>ul>li {
+	display: inline-block;
+	padding: 0 0 0 30px;
+	cursor: pointer;
+}
+
+/* Home */
+#home {
+	width: 100%;
+	height: 650px;
+	background: #2C3E50;	
+	text-align: center;
+}
+#home_wrap>h2 {
+	color: white;
+}
+#home_wrap>p {
+	padding-bottom: 20px; 	
+	font-size: 20px;
+	font-weight: normal;
+	color: white;
+}
+
+/*About*/ 
+#about {
+	width: 100%;
+	height: 720px;
+	text-align: center;
+}
+#about_wrap>p:nth-child(2) {
+	padding-bottom: 20px; 	
+}
+#about_wrap>p:nth-child(4) {
+	padding-top: 10px; 
+	padding-bottom: 20px; 	
+}
+
+/*Team*/
+#team {
+	width: 100%;
+	height: 720px;
+	background: #EEEEEE;
+	text-align: center;
+}
+#img_team {
+	width: 240px;
+	padding-top: 40px; 
+}
+#img_team>img:first-child {
+opacity: 0.3;
+width: 230px;
+height: auto;
+margin-bottom: -40px; 
+}
+#img_team>img:nth-child(4) {
+padding-top: 25px; 
+}
+#img_team>img:nth-child(4):hover {
+	opacity: 0.7;
+	transition: 0.3s;
+}
+#img_team>h5 {
+	padding-top: 10px;
+	font-size: 20px;
+	font-weight: normal;
+}
+#img_team>p {
+	padding: 10px;
+}
+
+/*portfolio*/
+#portfolio {
+	width: 100%;
+	height: 1250px;
+	text-align: center;
+}
+#tab>ul {
+	list-style-type: none;
+	margin-bottom: 35px; 
+	font-weight: bold;
+}
+#tab>ul>li {
+	display: inline-block;
+	border: 1px solid #9a9a9a;
+	border-radius: 5px;
+	padding: 10px 30px;
+	color: #9a9a9a;
+	cursor: pointer;
+}
+#tab>ul>li:first-child {
+	color: black;
+	border: 1px solid black;
+}
+#portfolio_wrap>p:nth-child(2) {
+	padding-bottom: 40px; 
+}
+#portfolio_img {
+	width: 280px;
+	height: 280px;
+	background-color: #EEEEEE;
+	margin: 10px;
+	overflow: hidden;
+	position: relative;
+}
+#portfolio_img>p {
+	font-size: 30px;
+	position: absolute;
+	z-index: 1;
+	top: 27%;
+	left: 31%;
+	color: #9a9a9a;
+}
+#img_title {
+	background-color: #9a9a9a;
+	margin-top:180px;
+	width: 100%;
+	height: 100px; 
+}
+#img_title>h4 {
+	text-align: left;
+	color: white;
+	font-weight: lighter;
+	font-size: 20px;
+	padding: 15px;
+	padding-bottom: 0; 
+	text-transform: capitalize;
+}
+#img_title>p {
+	text-align: left;
+	color: white;
+	font-weight: lighter;
+	font-size: 14px;
+	padding: 15px;
+	padding-top: 0; 
+}
+#img_lock {
+	width: 100%;
+	height: 100%; 
+	background-color: #9a9a9a;
+}
+#img_lock>i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #EEEEEE;
+}
+
+/*contact*/
+#contact {
+	width: 100%;
+	height: 760px;
+	text-align: center;
+	background-color: #EEEEEE;
+}
+#form {
+padding-top: 35px; 
+}
+input {
+	width: 550px;
+	height: 40px;
+	padding: 10px;
+	margin-top: 10px;
+	color: #9a9a9a;
+	border: 1px solid #9a9a9a;
+	border-radius: 3px;
+	font-size: 15px;
+}
+textarea {
+	width: 550px;
+	height: 200px;
+	padding: 10px;
+	margin-top: 10px;
+	color: #9a9a9a;
+	border: 1px solid #9a9a9a;
+	border-radius: 3px;
+	font-size: 15px;
+	overflow: hidden;
+	resize: none;
+}
+button {
+	margin-top: 40px;
+	width: 160px;
+	height: 50px;
+	font-size: 20px;
+	background-color: #2C3E50;
+	color: white;
+	border: 0;
+	border-radius: 3px;
+	font-weight: lighter;
+	cursor: pointer;
+}
+button:hover {
+	opacity: 0.7;
+	transition: 0.3s;
+}
+
+/*footer*/
+#footer {
+	width: 100%;
+	height: 120px;
+	text-align: center;
+}
+#footer>.container>ul {
+	list-style-type: none;
+	font-size: 15px;
+	margin-top: 50px; 
+	color: #6E6E6E;
+}
+#footer>.container>ul>li {
+	display: inline-block;
+	padding: 0 5px 0 8px;
+	cursor: pointer;
+}
+#footer>.container>ul>li>span {
+	margin-left: 10px;
+}
+#footer>.container>p {
+	padding-top: 5px; 
+	font-size: 13px;
+	color:  #9a9a9a;
+}
+#burger {
+	display: none;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	cursor: pointer;
+}
+#burger>div {
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: 0.4s;
+}
+#burger>div::before {
+	content: "";
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	top: -10px;
+	left: 0;
+}
+#burger>div::after {
+	content: "";
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+}
+
+@media screen and (max-width: 960px) {
+	.container {
+		width: 95%;
+	}
+	#header {
+		width: 100%;
+		text-align: center;
+		position: sticky;
+		top: 0;
+		z-index: 2;
+	}
+	#logo {	
+		float: block;
+		width: 100%;
+		text-align: center;	
+	}
+	#header_nav {
+		display: none;
+	}
+	#burger {
+		display: block;
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		z-index: 3;
+	}	
+	#home_wrap>img, #about_wrap>img {
+		width: 100%;
+	}
+	#about {
+		height: 100%;
+		padding-bottom: 30px;		
+	}	
+	#about_wrap>p {
+		padding: 10%;		 
+	}
+	#team {
+		height: 100%;
+	}
+	#team_wrap>.container {	
+		width: 100%;		
+		overflow-x: scroll;	
+		overflow-y: hidden;	
+		padding-bottom: 30px;
+	}
+	#img_team_wrap {
+			width: 960px;
+	}	
+	#tab>ul {
+		width: 100%;
+	}
+	#tab>ul>li {
+		padding: 10px 2.9%;
+	}
+	#portfolio { 
+    height: 100%; 
+	}
+	#portfolio_wrap>.container {
+		width: 100%;		
+		overflow-x: scroll;	
+		overflow-y: hidden;	
+		padding-bottom: 30px;
+	}
+	#portfolio_img_wrap {
+		width: 2700px;
+
+	}
+	#contact {
+		width: 100%;
+		height: 850px;
+		padding: 0 10% 50px;	
+	}
+	input,textarea {
+		width: 95%;
+	}
+	button {	
+		width: 25%;
+		font-size: 4vw;
+	}
+	#footer>.container>ul {
+		width: 100%;
+	}
+
+}

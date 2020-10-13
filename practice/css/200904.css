@@ -1,0 +1,40 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;	
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(45deg, #F78181, #F3F781, #BEF781, #81F79F, #81F7F3);
+	background-size: 1000% ;	
+	animation-name: gradient;	
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+}
+#display {	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 6vw;
+	font-weight: 900;
+	z-index: 1;
+	color: #FFF;
+	letter-spacing: 1vw;
+	opacity: 0.9;
+
+}
+
+@keyframes gradient {
+	0% {background-position: 0% 50%;
+
+	}
+	50% {background-position: 100% 50%;
+
+	}
+	100% {background-position: 0% 50%;
+
+	}
+
+}

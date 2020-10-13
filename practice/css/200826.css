@@ -1,0 +1,58 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	background-color: #81BEF7;
+}
+#wrap {
+	width: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #81BEF7;
+	text-align: center;
+}
+#input-area {
+	content: "";
+	clear: both;
+	display: table;
+	width: 200px;
+	margin: 0 auto;
+}
+
+#display {
+	font-size: 50px;
+	color: white; 
+	margin-bottom: 50px;
+	font-weight: bold;
+}
+#age {
+	float: left;
+	width: 180px;
+	height: 40px;
+	border: 0;
+	background-color: #58ACFA;	
+	color: white;
+	border-radius: 5px;
+	text-align: right;
+	padding-right: 5px;
+}
+#btnCalc {
+	float: left;
+	width: 180px;
+	height: 40px;
+	border: 2px solid white;
+	border-radius: 20px;
+	background-color: transparent;
+	color: white;
+	margin-top: 20px;
+}
+::placeholder {
+	color: white;
+	opacity: 0.8;
+} 

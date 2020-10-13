@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>7월 16일자 실습</title>
+	<style type="text/css">
+		body {
+				margin: 0;
+		}
+		.main {
+        	width: 750px;
+			padding: 50px;
+			background-color: #fff;
+        
+        }
+		.top-menu {
+			list-style-type: none;			
+			background-color: lightgrey;
+			background-image: url(https://i.imgur.com/fbPW708.gif);
+			background-size: 50px 50px;
+			background-position: right;
+			background-repeat: no-repeat;
+		}
+		.top-menu ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			border: 1px solid darkgray;
+		}
+
+		.top-menu ul li {
+			display: inline-block;
+			padding: 15px 25px; 
+		}
+		.top-menu ul li a:link {
+            text-decoration: none;
+            color: black;
+            font-weight: 800;
+        }
+        .top-menu ul li a:visited {
+        	text-decoration: none;
+             color: darkgray;
+               
+        }
+        .top-menu ul li a:hover {
+        	text-decoration: underline;
+            color: black;
+               
+        }
+        .top-menu ul li a:link small {
+        	font-weight: normal;
+        }
+        table {        
+	        width: 100%;	
+	 		border-collapse: collapse;	
+	 		caption-side: top; 
+	 		background-image: url(https://i.pinimg.com/originals/87/ba/a5/87baa56c17a7768a9607ff7e041bfe5b.jpg); 	
+	 		background-size: cover;
+			background-repeat: no-repeat;
+	 		background-position: center -801px ; 
+	 		/*양(+)의 값을 주면 기준과 이미지가 떨어져버림*/
+        }
+        table, tr,td {
+	 		border: 1px solid lightcyan;
+ 		}
+      
+		tr, td {		
+			padding: 15px;
+		}   
+        caption{
+			height: 425px;
+			padding: 20px;
+			background-image: url(https://i.pinimg.com/originals/87/ba/a5/87baa56c17a7768a9607ff7e041bfe5b.jpg); 	
+			background-size: 100%;
+			color: white;
+			background-position: center -336px;
+			line-height: 150px;
+
+        }
+        caption span {
+        	display: block;
+			font-size: 200px;
+
+		}
+		 .text-red {
+        	color: red;
+        }
+        .text-gray {
+        	color: gray;
+        }
+        .text-blue {
+        	color: blue;
+        }
+        .text-center {
+        	text-align: center;
+        }
+        .text-today {
+        	font-weight: bold;
+        	text-decoration: underline;
+        }
+      
+
+			
+
+	</style>
+</head>
+<body>
+<div class="main">
+<div class="top-menu">
+	<ul>
+		<li><a href="#">H<small>OME</small></a></li>
+		<li><a href="#">A<small>BOUT</small></a></li>
+		<li><a href="#">S<small>HOP</small></a></li>
+		<li><a href="#">B<small>AR</small></a></li>
+		<li><a href="#">C<small>ONTACT</small></a></li>
+	</ul>
+</div>
+	<table>
+		<caption class="text-center">FRIDAY<span>17</span></caption>
+		<tr>
+			<td colspan="7" class="text-center">JULY 2020</td>		
+		</tr>
+		<tr>
+			<td class="text-red">SUN</td>
+			<td>MON</td>
+			<td>TUE</td>
+			<td>WED</td>
+			<td>THU</td>
+			<td>FRI</td>
+			<td class="text-blue">SAT</td>
+		</tr>
+		<tr>
+			<td class="text-gray">28</td>
+			<td class="text-gray">29</td>
+			<td class="text-gray">30</td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td class="text-blue">4</td>
+		</tr>
+		<tr>
+			<td class="text-red">5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+			<td>10</td>
+			<td class="text-blue">11</td>
+		</tr>
+		<tr>
+			<td class="text-red">12</td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+			<td class="text-today">17</td>
+			<td class="text-blue">18</td>
+		</tr>
+		<tr>
+			<td class="text-red">19</td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+			<td class="text-blue">25</td>
+		</tr>
+		<tr>
+			<td class="text-red">26</td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+			<td>30</td>
+			<td>31</td>
+			<td class="text-gray">1</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

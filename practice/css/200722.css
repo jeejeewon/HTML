@@ -1,0 +1,43 @@
+* {
+			padding: 0;
+			margin: 0;
+	}
+html, body {
+ 	 		height: 100%;
+ 	 		
+	}
+
+#nature {
+			position: fixed;
+			/*top: -30px;*/
+			left: 0;
+			width: auto;
+			height: auto;
+			z-index: -1;
+			min-width: 100%; /* <--auto해도 안먹혀서 사용함*/
+			min-height: 100%;
+
+ 	}
+button {
+			width: 100%;
+			height: 50%;			
+			border: none;
+			color: white;
+			font-size: 70px;
+			background-color: transparent;
+			position: relative;				
+			outline: none;
+			cursor: pointer;
+			transition: 0.2s;
+			
+	}
+button:hover {
+	background-color: transparent;
+	color: black;
+}
+#play {
+
+}
+#stop {
+
+}	

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>	7월 21일자 실습</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-whidth,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../practice/css/200722.css">
+</head>
+	<body>
+		<video  id="nature" autoplay muted loop playsinline>
+			<!--1. 모바일에서 자동재생 하려면 muted 삽입
+				2. 아이폰에서 자동재생 가능하게 하려면 playsinline 삽입 (IOS10버전 이후부터)
+				3. 절전 모드일 경우는 자동재생이 제한됨
+				4. 결과적으로 자동재생을 위해서는 autoplay, muted, playsinline 총 3가지가 필수로 들어가야함.
+			-->
+			<source src="../practice/img/nature.mp4" type="video/mp4">
+		</video>
+		<button id="play" onclick="play()">PLAY</button><br>
+		<button id="stop" onclick="stop()">STOP</button>
+		
+
+			
+							
+		
+		<script type="text/javascript">
+			function play() {
+				nature.play();
+			}
+			function stop() {
+				nature.pause();
+			}
+		</script>
+	</body>
+</html>

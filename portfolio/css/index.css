@@ -1,0 +1,285 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	width: 100%;
+	height: 100%;	
+	background-color: lightblue;
+	overflow: hidden;
+}
+#wrap {
+	width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#wrap::-webkit-scrollbar {
+	display: none;
+}
+#wrap::after {
+	content: "";
+	display: table;
+	clear: both;
+
+}
+#loader {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+}
+#loader img {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.section {
+	/*float: left;*/
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;	
+	text-align: center;
+}
+#home>h2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 1vw;
+}
+#home>h2>span {
+	position: relative;
+	top: 10px;
+	opacity: 0;
+}
+.img {
+	width: 100px;
+	height: 100px;
+	background-color: aqua;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#menu {
+	position: absolute;
+    top: 0;
+    right: -75px;
+    z-index: 5;
+    transition: 0.3s ease;
+    height: 152px;
+    width: 70px;
+    cursor: pointer;
+}
+#menu::before {
+	content: "";
+    position: absolute;   
+    right: 0;
+    transition: 0.3s ease;
+    height: 152px;
+    width: 152px;
+    cursor: pointer;
+}
+#menu:hover {
+	right: 0;
+}
+ul {
+	list-style-type: none;	
+}
+li {
+	position: relative;	
+	text-transform: uppercase;
+	color: #000;	
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+li>span {	
+	position: absolute;
+	top: 50%;
+    right: 120%;
+    transform: translateY(-50%);
+    height: 1px;
+    width: 30px;
+    background-color: #000;
+    transition: 0.6s ease;
+}
+li:hover>span, span.active {		
+    width: 80px; 
+}
+
+li>span::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+    right: 110%;
+    transform: translateY(-50%);  
+}
+
+li:nth-child(1):hover>span:before, li:nth-child(1)>span.active:before {
+	content: "01";	  
+}
+li:nth-child(2):hover>span:before, li:nth-child(2)>span.active:before {
+	content: "02";  
+}
+li:nth-child(3):hover>span:before, li:nth-child(3)>span.active:before {
+	content: "03";	  
+}
+li:nth-child(4):hover>span:before, li:nth-child(4)>span.active:before {
+	content: "04";  
+}
+li:nth-child(5):hover>span:before, li:nth-child(5)>span.active:before {
+	content: "05";	  
+}
+li:nth-child(6):hover>span:before, li:nth-child(6)>span.active:before {
+	content: "06";  
+}
+li.active {
+	cursor: none;
+	pointer-events: none;
+	color: #000
+}
+
+/*button*/
+/*#next, #prev {
+	background-color: transparent;
+	border: 0;
+	text-transform: uppercase;
+	color: #fff;
+	outline: none;
+    font-size: 0.9vw;
+    font-style: italic;    
+    position: absolute;  
+    cursor: pointer;
+    text-align: center;
+}
+#next {
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#prev {
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);	
+}
+svg {
+	fill: #fff;
+	width: 40px;
+	padding-left: 10px;
+}
+#next>svg {
+	transform: rotate(-90deg);	
+}
+#prev>svg {
+	transform: rotate(90deg);
+
+}*/
+#scroll {
+	position: absolute;
+	font-size: 13px;
+    bottom: 230px;
+    right: 15px;
+    transform: rotate(90deg);
+}
+#scroll::after {
+	content: "";
+    position: absolute;
+	top: 35%;
+    left: 110%;
+    /* transform: translateY(-50%); */
+    height: 1px;
+    width: 80px;
+    background-color: #000;
+}
+#scroll::before {
+	content: "";
+    position: absolute;
+    top: 65%;
+    left: 200%;
+    /* transform: translateY(-50%); */
+    height: 1px;
+    width: 80px;
+    background-color: #000;
+}
+#contact-me {
+	font-size: 13px;
+	position: absolute;
+	bottom: 0;	   
+    right: 30px;
+    line-height: 13px;
+}
+#contact-me>p , #contact-me>i {
+	float: left;
+	padding-left: 10px;
+}
+#contact-me>i {
+	font-size: 15px;
+}
+/*background*/
+#background {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;	
+	display: none;
+}
+#background div {
+	filter: blur(10px);	
+	border-radius: 50%;
+	background-color: #fff;
+}
+#background>div,#background>div>div,#background>div>div>div {
+	animation-name: wobble;
+	animation-duration: 6s;
+	animation-timing-function: linear;
+	animation-direction: normal;
+	animation-iteration-count: infinite;
+}
+#background>div {
+	position: absolute;
+}
+@keyframes wobble {
+	
+	33% {
+		transform: translateY(-10px);
+	}
+	
+	66% {
+		transform: translateY(20px);
+	}
+	
+}
+@keyframes color {
+	0% {	
+	background-color: rgba(000,102,204,0.5);	
+	}
+	25% {
+	background-color: rgba(000,102,153,0.5);
+	}
+	50% {		
+	background-color: rgba(102,204,235,0.5);
+	}
+	75%; {
+	background-color: rgba(102,000,255,0.5);	
+	}
+	100% {	
+	background-color: rgba(000,102,204,0.5);
+	
+	}
+}

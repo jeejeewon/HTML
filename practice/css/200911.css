@@ -1,0 +1,37 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+
+}
+.swiper-slide {
+	overflow: hidden;
+}
+.slide-inner {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-size: cover;
+	background-position: center;	
+}
+/*odd = 2n+1 = 홀수*/
+.swiper-slide:nth-child(odd)>.slide-inner {
+	background-image: url(https://cdn.britannica.com/46/154246-050-7C72E12F/view-Rome.jpg);
+}
+/*even = 2n = 짝수*/
+.swiper-slide:nth-child(even)>.slide-inner {
+	background-image: url(https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg);
+}
+.swiper-button-prev, .swiper-button-next, .swiper-scrollbar {
+	display: none;
+}

@@ -1,0 +1,443 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	width: 100%;
+	height: 100%;		
+}
+table {
+	width: 100%;
+	height: 100%;
+}
+table>tbody>tr>td {
+	width: 10%;
+	height: 10%;
+	background-color: white;
+	transition: 0.3s;
+	border: 0px solid black;
+	cursor: pointer;
+}
+/*첫번째 행*/
+		table>tbody>tr:first-child>td:first-child {	
+			transition: 0.3s;
+		}
+		table>tbody>tr:first-child:hover>td:first-child {
+			background-color: #B40404;
+			/*transition: 0.3s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(2) {	
+			transition: 0.6s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(2) {
+			background-color: #DF0101;	
+			/*transition: 0.6s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(3) {	
+			transition: 0.9s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(3) {
+			background-color: #FF0000;	
+			/*transition: 0.9s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(4) {	
+			transition: 1.2s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(4) {
+			background-color: #FE2E2E;	
+			/*transition: 1.2s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(5) {	
+			transition: 1.5s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(5) {
+			background-color: #FA5858;	
+			/*transition: 1.5s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(6) {	
+			transition: 1.8s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(6) {
+			background-color: #F78181;	
+			/*transition: 1.8s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(7) {	
+		transition: 2.1s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(7) {
+		background-color: #F5A9A9;	
+		/*transition: 2.1s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(8) {	
+		transition: 2.4s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(8) {
+		background-color: #F6CECE;	
+		/*transition: 2.4s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(9) {	
+		transition: 2.7s;
+		}
+		table>tbody>tr:first-child:hover>td:nth-child(9) {
+		background-color: #F8E0E0;	
+		/*transition: 2.7s;*/
+		}
+		table>tbody>tr:first-child>td:nth-child(10) {	
+		transition: 3.0s;
+		}
+		table>tbody>tr:first-child:hover>td:last-child {
+		background-color: #FBEFEF;	
+		/*transition: 3.0s;*/
+		}
+
+/*두번째 행*/
+		table>tbody>tr:nth-child(2)>td:first-child {	
+		transition: 3.0s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:first-child {
+		background-color: #FBF5EF;	
+		/*transition: 3.0s;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(2) {	
+		transition: 2.7s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(2) {
+		background-color: #F8ECE0;	
+		/*transition: 2.7s;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(3) {	
+		transition: 2.4s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(3) {
+		background-color: #F6E3CE;	
+		/*transition: 2.4s;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(4) {	
+		transition: 2.1s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(4) {
+		background-color: #F5D0A9;	
+		/*transition: 2.1s;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(5) {	
+		transition: 1.8s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(5) {
+		background-color: #F7BE81;	
+		/*transition: 1.8s;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(6) {	
+		transition: 1.5s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(6) {
+		background-color: #FAAC58;	
+		/*transition: 1.5s;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(7) {	
+		transition: 1.2s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(7) {
+		background-color: #FE9A2E;	
+		/*transition: 1.2;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(8) {	
+		transition: 0.9s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(8) {
+		background-color: #FF8000;	
+		/*transition: 0.9;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(9) {	
+		transition: 0.6s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:nth-child(9) {
+		background-color: #DF7401;	
+		/*transition: 0.6;*/
+		}
+		table>tbody>tr:nth-child(2)>td:nth-child(10) {	
+		transition: 0.3s;
+		}
+		table>tbody>tr:nth-child(2):hover>td:last-child {
+		background-color: #B45F04;	
+		/*transition: 0.3;*/
+		}
+
+/*세번째 행*/
+		table>tbody>tr:nth-child(3)>td:first-child {	
+			transition: 0.3s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:first-child {
+			background-color: #B18904;
+			/*transition: 0.3s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(2) {	
+			transition: 0.6s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(2) {
+			background-color: #DBA901;	
+			/*transition: 0.6s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(3) {	
+			transition: 0.9s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(3) {
+			background-color: #FFBF00;	
+			/*transition: 0.9s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(4) {	
+			transition: 1.2s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(4) {
+			background-color: #FACC2E;	
+			/*transition: 1.2s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(5) {	
+			transition: 1.5s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(5) {
+			background-color: #F7D358;	
+			/*transition: 1.5s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(6) {	
+			transition: 1.8s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(6) {
+			background-color: #F5DA81;	
+			/*transition: 1.8s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(7) {	
+		transition: 2.1s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(7) {
+		background-color: #F3E2A9;	
+		/*transition: 2.1s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(8) {	
+		transition: 2.4s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(8) {
+		background-color: #F5ECCE;	
+		/*transition: 2.4s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(9) {	
+		transition: 2.7s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:nth-child(9) {
+		background-color: #F7F2E0;	
+		/*transition: 2.7s;*/
+		}
+		table>tbody>tr:nth-child(3)>td:nth-child(10) {	
+		transition: 3.0s;
+		}
+		table>tbody>tr:nth-child(3):hover>td:last-child {
+		background-color: #FBF8EF;	
+		/*transition: 3.0s;*/
+		}
+
+/*네번째 행*/
+		table>tbody>tr:nth-child(4)>td:first-child {	
+		transition: 3.0s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:first-child {
+		background-color: #F5FBEF;	
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(2) {	
+		transition: 2.7s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(2) {
+		background-color: #ECF8E0;			
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(3) {	
+		transition: 2.4s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(3) {
+		background-color: #E3F6CE;		
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(4) {	
+		transition: 2.1s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(4) {
+		background-color: #D0F5A9;		
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(5) {	
+		transition: 1.8s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(5) {
+		background-color: #BEF781;		
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(6) {	
+		transition: 1.5s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(6) {
+		background-color: #ACFA58;			
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(7) {	
+		transition: 1.2s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(7) {
+		background-color: #9AFE2E;		
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(8) {	
+		transition: 0.9s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(8) {
+		background-color: #80FF00;			
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(9) {	
+		transition: 0.6s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:nth-child(9) {
+		background-color: #74DF00;			
+		}
+		table>tbody>tr:nth-child(4)>td:nth-child(10) {	
+		transition: 0.3s;
+		}
+		table>tbody>tr:nth-child(4):hover>td:last-child {
+		background-color: #5FB404;			
+		}
+
+/*다섯번째 행*/
+
+
+/*전체 호버*/
+	/*두번째 행*/
+		table>tbody>tr:first-child:hover~tr>td:last-child  {
+		background-color: #B45F04;	
+		/*transition: 0.3s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(9) {
+		background-color: #DF7401;	
+		/*transition: 0.6s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(8) {
+		background-color: #FF8000;	
+		/*transition: 0.9s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(7) {
+		background-color: #FE9A2E;	
+		/*transition: 1.2s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(6) {
+		background-color: #FAAC58;	
+		/*transition: 1.5s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(5) {
+		background-color: #F7BE81;	
+		/*transition: 1.8s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(4) {
+		background-color: #F5D0A9;	
+		/*transition: 2.1s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(3) {
+		background-color: #F6E3CE;	
+		/*transition: 2.4s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:nth-child(2) {
+		background-color: #F8ECE0;	
+		/*transition: 2.7s;*/
+		}
+		table>tbody>tr:first-child:hover~tr>td:first-child {
+		background-color: #FBF5EF;	
+		/*transition: 3.0s;*/
+		}
+
+	/*세번째 행*/
+		table>tbody>tr:nth-child(2):hover~tr>td:first-child  {
+		background-color: #B18904;	
+		/*transition: 0.3s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(2) {
+		background-color: #DBA901;	
+		/*transition: 0.6s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(3) {
+		background-color: #FFBF00;	
+		/*transition: 0.9s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(4) {
+		background-color: #FACC2E;	
+		/*transition: 1.2s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(5) {
+		background-color: #F7D358;	
+		/*transition: 1.5s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(6) {
+		background-color: #F5DA81;	
+		/*transition: 1.8s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(7) {
+		background-color:  #F3E2A9;	
+		/*transition: 2.1s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(8) {
+		background-color: #F5ECCE;	
+		/*transition: 2.4s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:nth-child(9) {
+		background-color: #F7F2E0;	
+		/*transition: 2.7s;*/
+		}
+		table>tbody>tr:nth-child(2):hover~tr>td:last-child {
+		background-color: #FBF8EF;	
+		/*transition: 3.0s;*/
+		}
+
+	/*네번째 행*/
+		table>tbody>tr:nth-child(3):hover~tr>td:first-child  {
+			background-color: #F5FBEF;	
+	
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(2) {
+		background-color: #ECF8E0;	
+		
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(3) {
+		background-color: #E3F6CE;	
+		
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(4) {
+		background-color: #D0F5A9;	
+		
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(5) {
+		background-color: #BEF781;	
+	
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(6) {
+		background-color: #ACFA58;	
+	
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(7) {
+		background-color:  #9AFE2E;	
+	
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(8) {
+		background-color: #80FF00;	
+	
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:nth-child(9) {
+		background-color:  #74DF00;	
+	
+		}
+		table>tbody>tr:nth-child(3):hover~tr>td:last-child {
+		background-color: #5FB404;	
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
