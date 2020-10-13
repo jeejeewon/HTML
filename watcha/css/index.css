@@ -860,7 +860,16 @@ div[class*=popup-thumb-img-]>p {
 	}
 	.thumb_title {
 		height: 36%
+	}
+	#popup-thumb {
+		background-position: center;
 	}	
+	#popup-contents, #popup-ep {
+		left: 20px;
+	}
+	#main-video-title.popup>svg {
+		height: 50px;
+	}
 }
 @media screen and (max-width: 600px) {
 	#footer-menu>ul>li { 

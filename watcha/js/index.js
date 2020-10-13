@@ -6,11 +6,18 @@ $(function() {
     });
 
 	$("button.active").click(function(){
-		$("#popup").slideToggle(200);
-		$("#popup").animate({
-			width: '75%',
-			opacity: '1'
-		},800);
+		$("#popup").slideToggle(500);	
+		if($(window).width() < 600) { 
+			$("#popup").animate({
+				width: '100%',
+				opacity: '1'
+			},800);
+		} else {
+			$("#popup").animate({
+				width: '75%',
+				opacity: '1'
+			},800);
+		}
 		$("#popup-close").show(500);
 		// $("#popup").fadeIn(800);
 		$("#black").fadeIn(500);		
