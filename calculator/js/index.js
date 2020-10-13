@@ -45,8 +45,7 @@ function resultValue() {
 			alert("숫자를 입력해주세요")
 		} else {
 			display.innerText = eval(count.innerText + display.innerText); //문자열을 숫자로 변환
-			empty(count)	
-			
+			empty(count)			
 		};
 };
 
