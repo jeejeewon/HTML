@@ -19,6 +19,22 @@ $(function() {
 	$("#5").click(function(){
 		goto("#view-3");
 	});
+
+	$("#ticket").click(function(){
+		$(this).animate({
+			left: '50%'				
+		},1000)	
+	});
+	$("#wrap").click(function(){
+		$("#ticket").animate({
+			left: '-300px'				
+		},1000)	
+	});
+
+
+
+
+
 });
 
 function goto(target) {

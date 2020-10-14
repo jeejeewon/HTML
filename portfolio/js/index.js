@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 	$("#loader").fadeOut(500);
 	$("#wrap").fadeIn(500);	
 

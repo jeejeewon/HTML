@@ -646,7 +646,7 @@ div[id*=s-]>.swiper-wrapper>.swiper-slide {
 
 /*popup*/
 #popup {
-	width: 0;
+	width: 75%;
 	height: 80%;
 	z-index: 4;
 	position: absolute;
@@ -654,7 +654,7 @@ div[id*=s-]>.swiper-wrapper>.swiper-slide {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	opacity: 0.9;
+	opacity: 1;
 }
 #popup-close {
 	content: "\2715";

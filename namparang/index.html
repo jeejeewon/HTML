@@ -4,6 +4,7 @@
 	<title>남파랑</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
@@ -11,12 +12,15 @@
 	<script type="text/javascript" src="./js/index.js"></script>		
 </head>
 	<body id="top">
-		<div id="logo">			
+		<div id="preloader"></div>
+		<div id="nav-bar">
+			<!-- <div id="logo"></div> -->
+			<div id="lang" class="clear-both">
+				<button>한국</button>
+				<button>English</button>				
+			</div>			
 		</div>
-		<div id="lang" class="clear-both">
-			<button>한국</button>
-			<button>English</button>				
-		</div>
+	
 		<nav>	
 			<ul>
 				<li id="1">1</li>
@@ -27,34 +31,56 @@
 			</ul>	
 			<button id="to-top">top</button>
 		</nav>
-		<div id="side"></div>
+		<div id="ticket">
+			<div id="ticket-close"></div>
+			<div id="ticket-close"></div>			
+		</div>
 		<div id="wrap">
-			<div id="main">
-				<div>
-					<h1>남파랑<span>NAMPARANG</span></h1>
-					<p>글로벌 관광거점, 남해안의 물결 시작</p>
-					<p>남해안의 쪽빛 물결이 세계로 나아간다는 의미를 담고 있으며,
-					해안선과 다도해를 물결과 물방울을 표현. 기존 종단 여행에서 횡단여행으로 동과 서,
-					8개 지역을 3개의 횡단(하늘/내륙/바다)로 연결한다는 의미를 가지고 있습니다.</p>
+			<div id="main" class="clear-both">
+				<div class="float-left">
+					<div class="contents">
+						<div id="title">
+							<h2>남해안</br>쪽빛일주</h2>
+						</div>					
+						<p>글로벌 관광거점, 남해안의 물결 시작</p>
+						<p>남해안의 쪽빛 물결이 세계로 나아간다는 의미를 담고 있으며,
+						해안선과 다도해를 물결과 물방울을 표현. 기존 종단 여행에서 횡단여행으로 동과 서,
+						8개 지역을 3개의 횡단(하늘/내륙/바다)로 연결한다는 의미를 가지고 있습니다.</p>						
+					</div>					
 				</div>
+				<div class="wave-wrap float-left" >
+					<div class="wave"></div>
+					<div class="wave"></div>				
+				</div>				
 			</div>
 			<div id="map">
 				<div>
-					<h1>남해안 오션뷰 명소 20선이란?</h1>
-					<hr>
-					<p>
+					<div class="contents">
+						<h1>남해안 오션뷰 명소 20선이란?</h1>
+						<hr>
+						<p>
 						전남 고흥에서 경남 거제까지 남해안 7개 시·군 *해안도로를 따라 남해안이 갖고 있는 아름다운 바다 경관을 보다 더 새롭고 다양하게 보여줄 수 있는 대표 조망지점을 말합니다 쪽빛바다 멀리 보이는 바다와 군도, 바로 눈앞에서 새하얗게 빛무리가 눈부시게 빛나는 바다, 그리고 금빛 모래알들이 반짝이는 바닷가 ! 남해안에는 당신이 몰랐던 천개의 바다가 숨어 있습니다. 당신이 몰랐던 남해안의 숨겨진 오션뷰 명소
-					</p>
+						</p>						
+					</div>					
 				</div>
 			</div>
 			<div id="view-1">
-				<div>병대도 전망대</div>
+				<div>
+					<div class="contents">병대도 전망대</div>
+				</div>
+				
 			</div>
 			<div id="view-2">
-				<div>신선대와 바람의 언덕</div>				
+				<div>
+					<div class="contents">신선대와 바람의 언덕</div>					
+				</div>
+								
 			</div>
 			<div id="view-3">
-				<div>구조라 해변</div>
+				<div>
+					<div class="contents">구조라 해변</div>					
+				</div>
+				
 			</div>			
 		</div>		
 	</body>

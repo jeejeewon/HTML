@@ -5,18 +5,20 @@ $(function() {
         showHeader()             
     });
 
-	$("button.active").click(function(){
-		$("#popup").slideToggle(500);	
+	$("button.active").click(function(e){
+		e.preventDefault();
+	    var easeInOutBack = $(this).attr("data-easeInOutBack");
+	    var easeInQuart = $(this).attr("data-easeInQuart");	    
+
+		$("#popup").slideDown(800);	
 		if($(window).width() < 600) { 
 			$("#popup").animate({
-				width: '100%',
-				opacity: '1'
-			},800);
+				height: '95%'			
+			},800, easeInQuart);
 		} else {
 			$("#popup").animate({
-				width: '75%',
-				opacity: '1'
-			},800);
+				height: '80%'						
+			},800, easeInQuart);
 		}
 		$("#popup-close").show(500);
 		// $("#popup").fadeIn(800);
@@ -38,17 +40,16 @@ $(function() {
 				$(this).stop().animate({	
 					opacity: '1',
 					top: '0'
-				}, 600 * (i + 0.5));					
+				}, 600 * (i + 0.5), easeInOutBack);					
 			});	
-		},800); clearTimeout();	
+		},800, easeInOutBack); clearTimeout();	
 	});	
 
 	$("#popup-close").click(function(){		
 		$("#popup").animate({
-			width: '0',
-			opacity: '0.9'
+			height: '0',		
 		},800);
-		$("#popup").slideToggle(200);
+		$("#popup").hide(200);
 		$("#popup-close").hide(500);
 		$("#black").fadeOut(500);
 		$("div[class*=popup-thumb-img-]").css({
