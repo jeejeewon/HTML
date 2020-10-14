@@ -5,10 +5,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="./icon/.ico">
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script type="text/javascript" src="./js/leaderline.js"></script>
 	<script type="text/javascript" src="./js/index.js"></script>		
 </head>
 	<body id="top">
@@ -31,9 +33,9 @@
 			</ul>	
 			<button id="to-top">top</button>
 		</nav>
-		<div id="ticket">
-			<div id="ticket-close"></div>
-			<div id="ticket-close"></div>			
+		<div id="ticket-wrap">
+			<div id="ticket-close">&#10005;</div>
+			<div id="ticket"></div>			
 		</div>
 		<div id="wrap">
 			<div id="main" class="clear-both">
@@ -53,15 +55,20 @@
 					<div class="wave"></div>				
 				</div>				
 			</div>
-			<div id="map">
-				<div>
-					<div class="contents">
+			<div id="info">
+				<div class="clear-both">
+					<div id="map" class="float-left">
+						<div id="point-1"></div>
+						<div id="point-2"></div>
+						<div id="point-3"></div>						
+					</div>	
+				<!-- 	<div class="contents float-left">		
 						<h1>남해안 오션뷰 명소 20선이란?</h1>
 						<hr>
 						<p>
 						전남 고흥에서 경남 거제까지 남해안 7개 시·군 *해안도로를 따라 남해안이 갖고 있는 아름다운 바다 경관을 보다 더 새롭고 다양하게 보여줄 수 있는 대표 조망지점을 말합니다 쪽빛바다 멀리 보이는 바다와 군도, 바로 눈앞에서 새하얗게 빛무리가 눈부시게 빛나는 바다, 그리고 금빛 모래알들이 반짝이는 바닷가 ! 남해안에는 당신이 몰랐던 천개의 바다가 숨어 있습니다. 당신이 몰랐던 남해안의 숨겨진 오션뷰 명소
 						</p>						
-					</div>					
+					</div> -->
 				</div>
 			</div>
 			<div id="view-1">

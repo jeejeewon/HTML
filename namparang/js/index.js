@@ -1,5 +1,17 @@
 $(function() {
 
+	// var point1 = document.querySelector("#point-1");
+	// var point2 = document.querySelector("#point-2");
+	// var point3 = document.querySelector("#point-3");
+	// new LeaderLine(point1,point2,{dash: {animation: true}});
+	// new LeaderLine(point2,point3,{dash: {animation: true}});
+
+
+
+
+
+
+/*nav*/
 	$("#to-top").click(function(){
 		goto("#top");
 		console.log(goto())
@@ -21,14 +33,16 @@ $(function() {
 	});
 
 	$("#ticket").click(function(){
-		$(this).animate({
+		$("#ticket-wrap").animate({
 			left: '50%'				
 		},1000)	
+		$("#ticket-close").fadeIn(1100);
 	});
-	$("#wrap").click(function(){
-		$("#ticket").animate({
+	$("#ticket-close").click(function(){
+		$("#ticket-wrap").animate({
 			left: '-300px'				
 		},1000)	
+		$("#ticket-close").fadeOut(1100);
 	});
 
 
