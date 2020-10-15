@@ -1,17 +1,36 @@
 $(function() {
 
-	// var point1 = document.querySelector("#point-1");
-	// var point2 = document.querySelector("#point-2");
-	// var point3 = document.querySelector("#point-3");
-	// new LeaderLine(point1,point2,{dash: {animation: true}});
-	// new LeaderLine(point2,point3,{dash: {animation: true}});
+	/*LeaderLine*/
+		// var point1 = document.querySelector("#point-1");
+		// var point2 = document.querySelector("#point-2");
+		// var point3 = document.querySelector("#point-3");
+		// new LeaderLine(point1,point2,{dash: {animation: true}});
+		// new LeaderLine(point2,point3,{dash: {animation: true}});
+
+	resize();	
+	nav();
+
+	window.onresize = function() {
+		resize()		
+	};
 
 
+});
 
+function goto(target) {
+	$("html, body, #wrap").animate({
+			scrollTop: $(target).offset().top
+		},1000);
 
-
-
-/*nav*/
+};
+function resize() {
+	var wrapDiv = document.querySelectorAll(".contents-wrap");	
+	wrapDiv.forEach(function(el){		
+		el.style.height = window.innerHeight + "px";	
+	});
+	
+};
+function nav() {
 	$("#to-top").click(function(){
 		goto("#top");
 		console.log(goto())
@@ -20,7 +39,7 @@ $(function() {
 		goto("#main");
 	});
 	$("#2").click(function(){
-		goto("#map");
+		goto("#intro");
 	});
 	$("#3").click(function(){
 		goto("#view-1");
@@ -45,20 +64,4 @@ $(function() {
 		$("#ticket-close").fadeOut(1100);
 	});
 
-
-
-
-
-});
-
-function goto(target) {
-	//position() - 부모 기준의 위치값을 반환
-	//$(선택자).position().top / $(선택자).position().left
-	//offset() - 브라우저 기준의 위치값을 반환
-	//$(선택자).offset().top / $(선택자).offset().left
-
-	$("html, body, #wrap").animate({
-			scrollTop: $(target).offset().top
-		},1000);
-
-}
+};

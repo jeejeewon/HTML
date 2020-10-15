@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">	
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+</head>
+	<body>
+		<div id="form">
+			<div id="wrap">
+				<h2>contact us</h2>
+				<form action="#" method="GET">					
+					<table>
+						<tr>
+							<td><label for="userName" name="userName">이름</td>
+							<td><input type="text" name="userName" ></td>
+						</tr>
+						<tr>						
+							<td><label for="userDate">생년월일</label></td>
+							<td><input type="date" name="userDate"></td>		
+						</tr>
+						<tr>
+							<td>성별</td>							
+							<td>
+								<label for="male" name="male">남성</label>
+								<input type="radio" name="male">
+								<label for="female" name="female">여성</label>
+							 	<input type="radio" name="female">
+							 </td>						
+						</tr>
+						<tr>
+							<td><label for="addr1" name="adress">주소</label></td>
+							<td>
+								<input type="text" name="zip" placeholder="우편번호"><button type="button" onclick="openZipSearch()">검색</button>
+								<input type="text" name="addr1" placeholder="시, 도"><br>
+								<input type="text" name="addr2" placeholder="상세주소">
+							</td>
+						</tr>
+						<tr>
+							<td><label for="userEmail" name="userEmail">이메일</label></td>
+							<td><input type="email" name="userEmail">
+								<select name="emailAdress">
+									 		<option selected>직접입력</option>
+									 		<option>@naver.com</option>
+									 		<option>@hanmail.net</option>
+									 		<option>@gmail.com</option>
+							 	</select>		
+							 </td>
+						</tr>
+						<tr>
+							<td>취미</td>
+							<td>
+								<label for="sports" name="hobby">운동</label>
+								<input type="checkbox" name="sports">
+								<label for="book" name="hobby">독서</label>
+							 	<input type="checkbox" name="book">
+							 	<label for="hiking" name="hobby">등산</label> 	
+							 	<input type="checkbox" name="hiking"><br/>
+							 	<label for="art" name="hobby">그림</label>			
+							 	<input type="checkbox" name="art">
+							 	<label for="game" name="hobby">게임</label>		
+							 	<input type="checkbox" name="game">
+							 </td>
+						</tr>
+						<tr>
+							<td><label for="introduce">내 소개</label></td>
+							<td><textarea name="introduce"></textarea></td>
+						</tr>
+					</table>
+				</form>							
+				<div id="button-area">
+					<button>전송</button>
+					<button>다시</button>
+					<button>취소</button>
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>

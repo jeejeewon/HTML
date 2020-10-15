@@ -33,7 +33,10 @@ $(function() {
 				slidersPerView: 1,
 				speed: 300,		
 				loop: false,					    
-		});		
+		});
+		$("body").css({
+			overflow: 'hidden'
+		});	
 		$("video").trigger("pause");		
 		setTimeout(function() {
 			$("div[class*=popup-thumb-img-]").each(function(i) {		
@@ -56,6 +59,9 @@ $(function() {
 			opacity: '0',
 			top: '20px'
 		});
+		$("body").css({
+			overflow: 'scroll'
+		});	
 		$("video").trigger("play");
 	});		
 	
