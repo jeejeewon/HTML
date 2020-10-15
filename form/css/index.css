@@ -8,6 +8,9 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 #form {
 	width: 500px;
 	height: 700px;
@@ -19,20 +22,34 @@ html, body {
 	box-shadow: 0 0 10px #f2f2f2;
 	border-radius: 20px;
 }
+
 #wrap {
 	position: absolute;
     width: 90%;
-    height: 80%;
+    height: 85%;
     /* margin: 0 auto; */
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
+#wrap:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+h2,form, #button-area {
+	position: relative;
+	float: left;
+	width: 100%;
+}
 	
 h2 {
 	text-align: center;
 	text-transform: uppercase;
-	padding-bottom: 20px;
+	height: 7%;
+}
+form {
+	height: 85%
 }
 table {
 	margin: 0 auto;
@@ -49,7 +66,9 @@ td:nth-child(2) {
 }
 input {
 	width: 200px;
+	margin: 3px 0;
 }
+
 input[name=zip] {
 	width: 60px;
 }
@@ -68,6 +87,7 @@ textarea {
 }
 #button-area {
 	text-align: center;
+	height: 8%
 }
 button {
 	background-color: #f2f2f2;
@@ -75,10 +95,29 @@ button {
 	border-radius: 5px;
 	width: 50px;
 	height: 25px;
+    cursor: pointer;
 }
+button:active { 
+	position: relative; 
+	top: 1px; 
+	margin-bottom: 2px; 
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5); 
+}
+
 td>button {
     margin-left: 5px;
     height: 20px;
     width: 35px;
     line-height: 10px;
+
 }
+
+@media screen and (max-width: 500px) {
+	#form, #wrap {
+		width: 100%;		
+	}
+
+
+}
+
+
