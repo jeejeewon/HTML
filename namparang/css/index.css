@@ -90,10 +90,10 @@ ul>li {
 	left: 50%;
 	transform: translateX(-50%);
 	background: url(../svg/ticket.svg) no-repeat;
-    background-size: 100%;
-    width: 700px;
-    height: 100%;
-    transform: translateX(-50%);
+  background-size: 100%;
+  width: 700px;
+  height: 100%;
+  transform: translateX(-50%);
 }
 
 #to-top {
@@ -141,28 +141,120 @@ ul>li {
   width: 50%;
   height: 30%;
 }
-#title>h2 {
-	font-size: 5vw;
+#title>span {
+	font-size: 3.5vw;
   font-family: 'pado';
   color: #fff;
   font-weight: 500;
-  letter-spacing: 5vw;
+  letter-spacing: 5px;
   transition: 0.6s ease;
+  opacity: 0;
+  position: relative;
+  top: 20px;
 }
+#main>div>.contents>div:nth-child(2) {
+  position: relative;
+  top: 20%;
+}
+#scroll {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-size: 13px;
+}
+#scroll:after {
+    content: "";
+    position: absolute;
+    top: 375%;
+    left: -6px;
+    height: 1.4px;
+    width: 60px;
+    background-color: #fff;
+    transform: rotate(90deg);
+}
+#scroll:before {
+    content: "";
+    position: absolute;
+    top: 135%;
+    left: 19px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: move 2s cubic-bezier(0.350, -0.240, 0.525, 1.250) infinite;
+    opacity: 0;
+}
+@keyframes move {
+  0%, 10% {
+    opacity: 0;
+    top: 135%;
+  } 
+
+  50% {
+    opacity: 1; 
+
+  }
+  90%, 100% {
+    opacity: 0;
+    top: 540%;
+  }
+}
+
 #intro {
 	/*background-image: url("../img/back-01.jpg");*/
-  background: linear-gradient(to top, #3e9ffb, #fff 90%);
+  background: linear-gradient(to top, #3e9ffb, #fff 85%);
 }
 #info {
   width: 500px;
+  position: relative;
+  top: 100px;
+  right: 50px;
+  height: 700px;
+}
+#info>div:nth-child(1) {
+  position: relative;
+  height: 17%;
+  color: #000;
+  /*background-color: #fff;*/
+} 
+#info>div:nth-child(1)>span {
   position: absolute;
-  top: 30%;
+  background-color: #fff;
+  transition: 0.8s cubic-bezier(0.350, -0.240, 0.000, 1.000);
+  width: 400px;
+  height: 0;
+  bottom: 60px;
+  overflow: hidden;
+}
+#info>div:nth-child(1)>span:nth-child(2) {
+  bottom: 0px;
   right: 0;
 }
+#info>div:nth-child(1)>span>p {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  font-size: 50px;
+  opacity: 0;
+  transition: 0.8s cubic-bezier(0.350, -0.240, 0.000, 1.000);
+  top: 60px;
+}
 
+#info>div:nth-child(2) {
+  position: relative;
+  padding-top: 20%;
+  height: 83%;
+}
+#info>div:nth-child(2)>h3 {
+  color: #047cc1;
+  font-size: 30px;
+}
 #map {
   position: absolute;
-  top: 0;
+  top: 50px;
   /* transform: translateX(-50%); */
   background: url(../svg/map.svg) no-repeat;
   background-size: 740px auto;
@@ -170,25 +262,50 @@ ul>li {
   height: 590px;
 }
 #map>div {
-	position: fixed;
-	width: 30px;
-	height: 30px;
-	background-color: blue;
-	border-radius: 50%;
+	position: absolute;
 }
-#map>div:nth-child(1) {
-  top: 100px;
+#marker-1 {
+  top: 50px;
   left: 560px;
 }
-#map>div:nth-child(2) {
-  top: 330px;
+#marker-2 {
+  top: 280px;
   left: 570px;
 }
-#map>div:nth-child(3) {
-   top: 570px;
-  left: 350px;
+#marker-3 {
+  top: 520px;
+  left: 350px
+}
+.marker-box {
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+}
+.point {
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+  border-radius: 50%;
+}
+/*====shape=====*/
+.shape-wrap {
+  text-align: justify;
+  padding: 1em;
+  line-height: 35px;
+}
+.left {
+  shape-outside: polygon(0% 0%, 28.54% 0%, 42.07% 9%, 53.7% 17%, 55% 26.91%, 50% 37.23%, 37.79% 46%, 31.66% 53.62%, 27.51% 60.41%, 25.89% 68.33%, 25.20% 74.92%, 21.33% 80.8%, 12.8% 86.31%, 3.93% 92.6%, 0% 100%);
+  width: 40%;
+  height: 50em;
 }
 
+.right {
+  shape-outside: polygon(100% 0%, 5% 0%, 21.54% 5.74%, 28.34% 12.03%, 31.51% 17.61%, 33.6% 23.43%, 33.55% 28.66%, 30.64% 34.46%, 25.47% 39.77%, 18.55% 45.03%, 12.27% 50.82%, 9.44% 56.44%, 11.43% 61.36%, 21.16% 68.88%, 31.08% 72.73%, 42.77% 76.14%, 72.1% 82.93%, 83.62% 86.6%, 92.83% 91.02%, 100% 100%);
+  width: 40%;
+  height: 50em;
+}
 /*=====wave=====*/
 .wave-wrap { 
   /*height: 5%;*/
@@ -231,5 +348,18 @@ ul>li {
   }
 }
 
-
+/*=====swiper=====*/
+.swiper-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    width: 500px;
+    background: aquamarine;
+}
+.swiper-slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
