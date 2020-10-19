@@ -11,7 +11,7 @@ $(function() {
 	nav();
 	window.onresize = function() {
 		resize()		
-	};
+	};	
 
 	$("#title>span").each(function(i) {	
 	    var easeInOutBack = $(this).attr("data-easeInOutBack");
@@ -25,45 +25,62 @@ $(function() {
         console.log($(window).scrollTop());   
         showTitle()             
     });
+ 	goto();
+ 	
+
+/*fullScroll*/
+    //	new fullScroll({		
+	//     container : 'main',
+	//     sections : 'sections',
+	//     animateTime : 0.7,
+	//     animateFunction : 'ease',	 
+	//     currentPosition: 0,
+	//     displayDots: false,
+	//     dotsPosition: 'left',
+	//     css3: true,		
+	// 	autoScrolling: false,
+	// 	fitToSection: true,
+	// 	scrollBar: true,
+	// });
 
 
 /*swiper*/
-	var swiper1 = new Swiper('#view-1-swiper', {
-	 	allowTouchMove: true,
-		slidesPerView: 1,
-		spaceBetween: 30,
-		speed: 300,				
-		navigation: {
-		nextEl: '#view-1-swiper>.swiper-button-next',
-		prevEl: '#view-1-swiper>.swiper-button-prev',
-		}
-    });
-    var swiper2 = new Swiper('#view-2-swiper', {
-	 	allowTouchMove: true,
-		slidesPerView: 1,
-		spaceBetween: 30,
-		speed: 300,				
-		navigation: {
-		nextEl: '#view-2-swiper>.swiper-button-next',
-		prevEl: '#view-2-swiper>.swiper-button-prev',
-		}
-    });
-    var swiper3 = new Swiper('#view-3-swiper', {
-	 	allowTouchMove: true,
-		slidesPerView: 1,
-		spaceBetween: 30,
-		speed: 300,				
-		navigation: {
-		nextEl: '#view-3-swiper>.swiper-button-next',
-		prevEl: '#view-3-swiper>.swiper-button-prev',
-		}
-    });   
+	// var swiper1 = new Swiper('#view-1-swiper', {
+	//  	allowTouchMove: true,
+	// 	slidesPerView: 1,
+	// 	spaceBetween: 30,
+	// 	speed: 300,				
+	// 	navigation: {
+	// 	nextEl: '#view-1-swiper>.swiper-button-next',
+	// 	prevEl: '#view-1-swiper>.swiper-button-prev',
+	// 	}
+ //    });
+ //    var swiper2 = new Swiper('#view-2-swiper', {
+	//  	allowTouchMove: true,
+	// 	slidesPerView: 1,
+	// 	spaceBetween: 30,
+	// 	speed: 300,				
+	// 	navigation: {
+	// 	nextEl: '#view-2-swiper>.swiper-button-next',
+	// 	prevEl: '#view-2-swiper>.swiper-button-prev',
+	// 	}
+ //    });
+ //    var swiper3 = new Swiper('#view-3-swiper', {
+	//  	allowTouchMove: true,
+	// 	slidesPerView: 1,
+	// 	spaceBetween: 30,
+	// 	speed: 300,				
+	// 	navigation: {
+	// 	nextEl: '#view-3-swiper>.swiper-button-next',
+	// 	prevEl: '#view-3-swiper>.swiper-button-prev',
+	// 	}
+ //    });   
 
 
 });
 
 function goto(target) {
-	$("html, body, #wrap").animate({
+	$("html, body, #main").animate({
 			scrollTop: $(target).offset().top
 		},1000);
 
@@ -81,19 +98,19 @@ function nav() {
 		console.log(goto())
 	});
 	$("#1").click(function(){
-		goto("#main");
+		goto("#main-title");
 	});
 	$("#2").click(function(){
 		goto("#intro");
 	});
 	$("#3").click(function(){
-		goto("#view-1");
+		goto("#view");
 	});
 	$("#4").click(function(){
-		goto("#view-2");
+		goto("#movie");
 	});
 	$("#5").click(function(){
-		goto("#view-3");
+		goto("#food");
 	});
 
 	$("#ticket").click(function(){

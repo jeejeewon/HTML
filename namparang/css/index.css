@@ -100,28 +100,29 @@ ul>li {
 	color: #fff;
 	cursor: pointer;
 }
-#wrap {
+#main {
 	position: relative;
 	width: 100%;
   overflow-y: scroll;
 }
-#wrap::-webkit-scrollbar {
+#main::-webkit-scrollbar {
 	display: none;
 }
-#wrap>div {
+#main>section {
 	position: relative;
 	width: 100%;
 }
-#wrap>div>div(not:.wave-wrap) {
+#main>section>div(not:.wave-wrap) {
 	position: relative;
 	height: 100%;
 	width: 100%;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+  overflow: hidden;
 }
 
-#main {
+#main-title {
 	background-size: cover;
 	background-color: #3e9ffb;
   background-image: linear-gradient(to top, #fff 50px, transparent 50px)
@@ -137,7 +138,7 @@ ul>li {
   transform: translate(-50%,-50%);
 
 }
-#main>div>.contents {
+#main-title>div>.contents {
   width: 50%;
   height: 30%;
 }
@@ -152,7 +153,7 @@ ul>li {
   position: relative;
   top: 20px;
 }
-#main>div>.contents>div:nth-child(2) {
+#main-title>div>.contents>div:nth-child(2) {
   position: relative;
   top: 20%;
 }
@@ -358,8 +359,56 @@ ul>li {
     width: 500px;
     background: aquamarine;
 }
+#view, #movie, #food {
+  background-color: #3e9ffb;
+}
 .swiper-slide {
   background-repeat: no-repeat;
   background-size: cover;
 }
+#tab-button {
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  cursor: pointer;  
+  left: 50%;
+  transform: translateX(-50%);
+}
+#tab-button>li {
+  padding: 0px 15px;
+  display: inline;
+}
+#pic-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1200px;
+  height: 670px;
+  background-color: #fff;
+}
+#display {
+  background-color: gray;
+  width: 70%;
+  height: 100%;
+}
+#side {
+  width: 30%;
+  height: 100%;
+  padding: 0 10%;
+}
+.thumb {
+  width: 100px;
+  height: 50px;
+  background-color: #f2f2f2;
+}
+#video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 
+}
+#box-wrap {
+  
+}
