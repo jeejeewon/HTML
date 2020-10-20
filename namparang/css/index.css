@@ -410,5 +410,16 @@ ul>li {
 
 }
 #box-wrap {
+  width: 900px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   
+}
+.box {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-color: #fff;
 }
