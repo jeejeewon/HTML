@@ -91,13 +91,13 @@ function nav() {
 		goto("#main-title");
 	});
 	$("#2").click(function(){
-		goto("#intro");
+		goto("#view-1");
 	});
 	$("#3").click(function(){
-		goto("#view");
+		goto("#view-2");
 	});
 	$("#4").click(function(){
-		goto("#movie");
+		goto("#view-3");
 	});
 	$("#5").click(function(){
 		goto("#food");

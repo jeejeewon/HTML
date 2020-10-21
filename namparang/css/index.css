@@ -206,7 +206,7 @@ ul>li {
   }
 }
 
-#intro, #movie, #view {
+#view-2-1, #view-3, #view-2 {
 	/*background-image: url("../img/back-01.jpg");*/
   /*background: linear-gradient(to top, #3e9ffb, #fff 85%);*/
   background-color: #fff;
@@ -319,11 +319,11 @@ ul>li {
   position: absolute;
   bottom: 0;
 }
-#view .image-area {
+#view-2 .image-area {
     width: 450px;
     height: 50%;
 }
-#movie .image-area {
+#view-3 .image-area {
     height: 60%;
     width: 520px;
 }
@@ -441,10 +441,10 @@ ul>li {
 .wave-svg>svg>path, .wave-side-svg>svg>path  {
   fill: #3e9ffb;
 }
-#view>.wave-svg {
+#view-2>.wave-svg {
   right: 0;
 }
-#view>.wave-svg>svg>path {
+#view-2>.wave-svg>svg>path {
   fill: #fff;
 }
 .wave-side-svg {  
