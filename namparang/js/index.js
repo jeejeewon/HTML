@@ -28,7 +28,7 @@ $(function() {
  	goto();
  	
 
-/*fullScroll*/
+/*====fullScroll====*/
     //	new fullScroll({		
 	//     container : 'main',
 	//     sections : 'sections',
@@ -44,38 +44,28 @@ $(function() {
 	// });
 
 
-/*swiper*/
-	// var swiper1 = new Swiper('#view-1-swiper', {
-	//  	allowTouchMove: true,
-	// 	slidesPerView: 1,
-	// 	spaceBetween: 30,
-	// 	speed: 300,				
-	// 	navigation: {
-	// 	nextEl: '#view-1-swiper>.swiper-button-next',
-	// 	prevEl: '#view-1-swiper>.swiper-button-prev',
-	// 	}
- //    });
- //    var swiper2 = new Swiper('#view-2-swiper', {
-	//  	allowTouchMove: true,
-	// 	slidesPerView: 1,
-	// 	spaceBetween: 30,
-	// 	speed: 300,				
-	// 	navigation: {
-	// 	nextEl: '#view-2-swiper>.swiper-button-next',
-	// 	prevEl: '#view-2-swiper>.swiper-button-prev',
-	// 	}
- //    });
- //    var swiper3 = new Swiper('#view-3-swiper', {
-	//  	allowTouchMove: true,
-	// 	slidesPerView: 1,
-	// 	spaceBetween: 30,
-	// 	speed: 300,				
-	// 	navigation: {
-	// 	nextEl: '#view-3-swiper>.swiper-button-next',
-	// 	prevEl: '#view-3-swiper>.swiper-button-prev',
-	// 	}
- //    });   
+/*====swiper====*/
+	var mySwiper = new Swiper('.swiper-container', {
+	  // Optional parameters
+	  direction: 'vertical',
+	  loop: true,
 
+	  // If we need pagination
+	  pagination: {
+	    el: '.swiper-pagination',
+	  },
+
+	  // Navigation arrows
+	  navigation: {
+	    nextEl: '.swiper-button-next',
+	    prevEl: '.swiper-button-prev',
+	  },
+
+	  // And if we need scrollbar
+	  scrollbar: {
+	    el: '.swiper-scrollbar',
+	  },
+	})
 
 });
 
@@ -131,13 +121,13 @@ function nav() {
 function showTitle() {
 	if ($(window).scrollTop() >= 1079) {
 		var easeInQuart = $(this).attr("data-easeInQuart");
-		$("#info>div:nth-child(1)>span").each(function(i) {		    
+		$(".info>div:nth-child(2)>span").each(function(i) {		    
 			$(this).stop().animate({				
 				height: '60px'
 			}, 100 * (i + 0.1),easeInQuart);
 		});
 		setTimeout(function() {
-			$("#info>div:nth-child(1)>span>p").each(function(i) {		
+			$(".info>div:nth-child(2)>span>p").each(function(i) {		
 				$(this).stop().animate({	
 					opacity: '1',
 					top: '0'

@@ -1,7 +1,7 @@
 $(function() {
 	
-    $("#wrap").scroll(function(e) {           
-        console.log($("#wrap").scrollTop());   
+    $(window).scroll(function(e) {           
+        console.log($(window).scrollTop());   
         showHeader()             
     });
 
@@ -69,7 +69,7 @@ $(function() {
 	hoverThumb()
 
 
-/*swiper*/
+/*====swiper====*/
 	var swiper = new Swiper('#video-swiper', {
 	 	loop:true,
 	 	speed: 800,
@@ -243,7 +243,7 @@ function hoverThumb() {
 };
 
 function showHeader() {
-	if ($("#wrap").scrollTop() >= 1) {
+	if ($(window).scrollTop() >= 1) {
 		$("header").css({
 			position: 'fixed',
 			backgroundColor: '#000'	
