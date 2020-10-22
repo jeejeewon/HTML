@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">  
+  <style type="text/css">
+ 
+    .egg {
+     display: block;
+    width: 520px;
+    height: 500px;
+    background-color: blue;
+    border-radius: 80% 50% 60% 80% / 60% 50% 90% 40%;
+    filter: blur(31px);
+       animation: wave 15s infinite linear;
+    }
+    #test1 {
+      background-color: skyblue;
+       border-radius: 80% 40% 60% 80% / 60% 50% 30% 40%;
+    }
+     #test2 {
+      background-color: aqua;
+       border-radius: 80% 40% 60% 80% / 60% 50% 30% 40%;
+    }
+
+    @keyframes wave {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+  from { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+    
+
+  </style>
+</head>
+  <body>
+  <div class="egg"></div>
+  <div class="egg" id="test1" ></div>
+  <div class="egg" id="test2"></div>
+
+  <!-- <div class="irregular"></div> -->
+    
+  </body>
+</html>

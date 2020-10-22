@@ -13,7 +13,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<script type="text/javascript" src="./js/leaderline.js"></script>
+	<script type="text/javascript" src="./js/ripples.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+	
 	<!-- <script type="text/javascript" src="./js/full-page-scroll.js"></script> -->
 	<script type="text/javascript" src="./js/index.js"></script>		
 </head>
@@ -36,16 +38,16 @@
 			</ul>	
 			<button id="to-top">top</button>
 		</nav>
-		<div id="ticket-wrap">
+		<!-- <div id="ticket-wrap">
 			<div id="ticket-close">&#10005;</div>
 			<div id="ticket"></div>			
-		</div>
+		</div> -->
 		<div id="main" class="scroll-container">
 			<!-- <header></header> -->
 			<section id="main-title" class="clear-both contents-wrap">
 				<div class="float-left">
 					<div class="contents float-left">
-						<div id="title">					
+						<div id="title" class="title-bubbles">					
 							<span>남</span>
 							<span>해</span>
 							<span>안</span> 
@@ -68,16 +70,21 @@
 						<div id="scroll">scroll</div>				
 					</div>					
 				</div>
+				<div id="background-wrap">
+					<div class="back" id="b1"></div>
+					<div class="back" id="b2"></div>
+					<div class="back" id="b3"></div>					
+				</div>
 				<div class="wave-wrap float-left" >
 					<div class="wave"></div>
 					<div class="wave"></div>				
-				</div>				
+				</div>
 			</section>
 			<section id="view-1" class="contents-wrap">
 				<div class="clear-both">
 					<div class="contents clear-both">
 						<div class="image-area float-right">
-							<div class="swiper-area swiper-container">				   
+							<div id="view-1-swiper" class="swiper-area swiper-container">	   
 							    <div class="swiper-wrapper">					      
 							        <div class="swiper-slide">Slide 1</div>
 							        <div class="swiper-slide">Slide 2</div>
@@ -140,7 +147,7 @@
 			<section id="view-2" class="contents-wrap">			
 				<div class="contents">				
 					<div class="image-area float-left">
-						<div class="swiper-area swiper-container">				   
+						<div id="view-2-swiper" class="swiper-area swiper-container">				   
 						    <div class="swiper-wrapper">					      
 						        <div class="swiper-slide">Slide 1</div>
 						        <div class="swiper-slide">Slide 2</div>
@@ -182,12 +189,12 @@
 			<section id="view-3" class="contents-wrap">				
 				<div class="contents">		
 					<div class="image-area float-right">
-						<div class="swiper-area swiper-container">				   
-						    <div class="swiper-wrapper">					      
+						<div  id="view-3-swiper" class="swiper-area swiper-container">				   
+						    <div class="swiper-wrapper">			      
 						        <div class="swiper-slide">Slide 1</div>
 						        <div class="swiper-slide">Slide 2</div>
 						        <div class="swiper-slide">Slide 3</div>	
-						        <div class="swiper-slide">Slide 3</div>			      
+						        <div class="swiper-slide">Slide 3</div>	   
 						    </div>								    
 						    <div class="swiper-pagination"></div>					    
 						    <div class="swiper-button-prev"></div>
@@ -233,10 +240,14 @@
 					</svg>
 				</div>							
 			</section>
-			<section id="food" class="contents-wrap">				
-				<div class="contents">
-					<div>계절별 먹거리</div>
-					<div id="box-wrap" class="clear-both">
+			<section id="food" class="contents-wrap bubbles">				
+				<div class="contents clear-both">
+					<div id="food-text-wrap" class="float-left">
+						<span></span>
+						<h1>계절별 먹거리</h1>
+						<p>거제의 대자연과 함께하는 특별한 체험</p>
+					</div>
+					<div id="box-wrap" class="clear-both float-left">
 						<div class="box float-left">
 							<div class="food-thumb"></div>
 						</div>

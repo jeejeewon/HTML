@@ -1,31 +1,35 @@
 $(function() {
 
-	/*LeaderLine*/
-		// var point1 = document.querySelector("#point-1");
-		// var point2 = document.querySelector("#point-2");
-		// var point3 = document.querySelector("#point-3");
-		// new LeaderLine(point1,point2,{dash: {animation: true}});
-		// new LeaderLine(point2,point3,{dash: {animation: true}});
-
 	resize();	
+	// scrollUpDown();
+	titleBubbles();
 	nav();
 	window.onresize = function() {
-		resize()		
+		resize();
+		
 	};	
 
-	$("#title>span").each(function(i) {	
-	    var easeInOutBack = $(this).attr("data-easeInOutBack");
+	$("#title>span").each(function(i) {		 
 		$(this).stop().animate({
 			top: '0',
 			opacity: '1'
-		}, 100 * (i + 0.1),easeInOutBack);
+		}, 100 * (i + 0.1),'easeInOutBack');
 	});
+
 
    $(window).scroll(function(e) {           
         console.log($(window).scrollTop());   
-        showTitle()             
+        showTitle();
+        showImage();
+        showFoodBox(); 
+             
     });
  	goto();
+
+ 	$('.swiper-slide').ripples({
+			resolution: 256,
+			perturbance: 0.04
+	});
  	
 
 /*====fullScroll====*/
@@ -45,23 +49,16 @@ $(function() {
 
 
 /*====swiper====*/
-	var mySwiper = new Swiper('.swiper-container', {
-	  // Optional parameters
+	var mySwiper1 = new Swiper('#view-1-swiper.swiper-container', {
 	  direction: 'vertical',
 	  loop: true,
-
-	  // If we need pagination
 	  pagination: {
 	    el: '.swiper-pagination',
-	  },
-
-	  // Navigation arrows
+	  },	 
 	  navigation: {
 	    nextEl: '.swiper-button-next',
 	    prevEl: '.swiper-button-prev',
-	  },
-
-	  // And if we need scrollbar
+	  },	 
 	  scrollbar: {
 	    el: '.swiper-scrollbar',
 	  },
@@ -117,22 +114,161 @@ function nav() {
 	});
 
 };
+function showImage() {
+	if ($(window).scrollTop() >= 500) {
+		$("#view-1 .image-area>.null-box").css({
+			  height: '95%'
+		});
+		$("#view-1-swiper").css({
+			  transform: 'scale(1)'
+		});
+	};
+	if ($(window).scrollTop() >= 1500) {
+		$("#view-2 .image-area>.null-box").css({
+			  height: '95%'
+		});
+		$("#view-2-swiper").css({
+			  transform: 'scale(1)'
+		});
+	};
+		if ($(window).scrollTop() >= 2500) {
+		$("#view-3 .image-area>.null-box").css({
+			  height: '95%'
+		});
+		$("#view-3-swiper").css({
+			  transform: 'scale(1)'
+		});
+	};
+}
 
 function showTitle() {
-	if ($(window).scrollTop() >= 1079) {
-		var easeInQuart = $(this).attr("data-easeInQuart");
-		$(".info>div:nth-child(2)>span").each(function(i) {		    
+	if ($(window).scrollTop() >= 900) {			
+		$("#view-1 .title-area>span").each(function(i) {		    
 			$(this).stop().animate({				
 				height: '60px'
-			}, 100 * (i + 0.1),easeInQuart);
+			}, 100 * (i + 0.1),'easeInQuart');
+		});		
+		setTimeout(function() {
+			$("#view-1 .title-area>span>p").each(function(i) {		
+				$(this).stop().animate({						
+					opacity: '1',
+					top: '0'
+				}, 100 * (i + 0.1),'easeOutElastic');							
+			});				
+		},800); clearTimeout();		
+	};
+	if ($(window).scrollTop() >= 1900) {		
+		$("#view-2 .title-area>span").each(function(i) {		    
+			$(this).stop().animate({				
+				height: '60px'
+			}, 100 * (i + 0.1),'easeInQuart');
 		});
 		setTimeout(function() {
-			$(".info>div:nth-child(2)>span>p").each(function(i) {		
+			$("#view-2 .title-area>span>p").each(function(i) {		
 				$(this).stop().animate({	
 					opacity: '1',
 					top: '0'
-				}, 100 * (i + 0.1),easeInQuart);					
+				}, 100 * (i + 0.1),'easeOutElastic');					
 			});	
 		},800); clearTimeout();	
 	};
+	if ($(window).scrollTop() >= 3000) {	
+		$("#view-3 .title-area>span").each(function(i) {		    
+			$(this).stop().animate({				
+				height: '60px'
+			}, 100 * (i + 0.1),'easeInQuart');
+		});
+		setTimeout(function() {
+			$("#view-3 .title-area>span>p").each(function(i) {		
+				$(this).stop().animate({	
+					opacity: '1',
+					top: '0'
+				}, 100 * (i + 0.1),'easeOutElastic');					
+			});	
+		},800); clearTimeout();	
+	};
+	if ($(window).scrollTop() >= 4000) {		
+		$("#food-text-wrap>span").stop().animate({
+			 height: '65px'
+		},800,'easeInOutBack');		
+		setTimeout(function() {
+			$("#food-text-wrap h1").stop().animate({
+			 opacity: '1'
+		},100);
+			$("#food-text-wrap>span").stop().animate({
+				 height: '0',
+				 top:'0'
+			},800,'easeInOutBack');					
+		},900); clearTimeout();
+	};
 };
+
+function showFoodBox() {
+	if ($(window).scrollTop() >= 4000) {
+		setTimeout(function() {
+			$(".box").each(function(i) {		    
+			$(this).stop().animate({				
+				top: '0',
+				opacity: '1'
+			}, 600 * (i + 0.1),'easeInQuart');
+		});
+		},1800); clearTimeout();
+	};
+};
+
+ 
+function scrollUpDown() {
+	var oldScroll = 0;
+	$(window).scroll(function(){
+		var easeInQuart = $(this).attr("data-easeInQuart");
+		var nowScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+		if(nowScroll < oldScroll) {
+			$("#preloader").text("up");
+			$("#main-title").animate({
+				 height: window.innerHeight + 'px',
+			},800,easeInQuart);	
+		} else {
+			$("#preloader").text("down");
+			$("#main-title").animate({
+				 height: '0',
+			},800,easeInQuart);					
+		}
+		oldScroll = nowScroll <= 0 ? 0 : nowScroll;
+	});
+};
+
+
+function titleBubbles() {
+	//효과 위치
+    var bArray = [];
+    //버블 사이즈
+    var sArray = [4,6,8,10];
+ 
+    // 제목 너비 값을 bArray로 푸시
+    for (var i = 0; i < $('.title-bubbles').width(); i++) {
+        bArray.push(i); //배열끝에 추가
+    }
+
+    //랜덤 배열 생성
+    function randomValue(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+ 
+    //새 버블을 만드는 데 사용되는 setInterval 
+    setInterval(function(){         
+        //랜덤 사이즈
+        var size = randomValue(sArray);
+        // 크기와 왼쪽 위치를 인라인으로 설정하여 div에 새 버블을 추가했습니다.
+        // bArray에서 임의의 값을 얻어 left 값을 설정
+        $('.title-bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');     
+       
+        $('.individual-bubble').animate({
+            'bottom': '100%',
+            'opacity' : '-=0.7'
+        }, 3000, function(){
+            $(this).remove()
+        }
+        ); 
+    }, 350);
+};
+

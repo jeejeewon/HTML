@@ -125,9 +125,10 @@ ul>li {
 #main-title {
 	background-size: cover;
 	background-color:#3e9ffb;
-  background-image: linear-gradient(to top, #fff 50px, transparent 50px);
+  background-image: linear-gradient(to top, #fff 50px, #63abea 0%, #73eef5 100%);
+  /*background-image: linear-gradient(to top, #fff 50px, transparent 50px);*/
    /*url("../img/back-01.jpg")*/
-}
+ }
 .contents {
   width: 80%;
   height: 80%;
@@ -205,6 +206,19 @@ ul>li {
     top: 540%;
   }
 }
+.title-bubbles {
+display: inline-block;
+position: relative;
+}
+
+.individual-bubble {
+position: absolute;
+border-radius: 100%;
+bottom: 10px;
+background-color: #fff;
+z-index: 1;
+}
+
 
 #view-2-1, #view-3, #view-2 {
 	/*background-image: url("../img/back-01.jpg");*/
@@ -212,7 +226,8 @@ ul>li {
   background-color: #fff;
 }
 #food {
-  background-color: #3e9ffb;
+  /*background-color: #3e9ffb;*/
+  background-image: linear-gradient(to bottom, #63abea 0%, #73eef5 200%);
 }
 .info {
   width: 500px;
@@ -231,7 +246,7 @@ ul>li {
 } 
 .title-area>span {
   position: absolute;
-  background-color: #3e9ffb;
+  background-color: #63abea;
   transition: 0.8s cubic-bezier(0.350, -0.240, 0.000, 1.000);
   width: 400px;
   height: 0;
@@ -243,6 +258,7 @@ ul>li {
   right: 0;
 }
 .title-area>span>p {
+  /*font-family: 'pado';*/
   position: absolute;
   width: 100%;
   height: 0;
@@ -270,7 +286,8 @@ ul>li {
   border-radius: 50%;
   width: 45px;
   height: 45px;
-  background-color: #3e9ffb;
+  background-color: #63abea;
+  /*background-image: linear-gradient(-90deg, #63abea 0%, #73eef5 100%);*/
   transition: 0.6s;
   
 }
@@ -301,6 +318,7 @@ ul>li {
   width: 490px;
   height: 100%;
   position: relative;
+  /*display: none;*/
 }
 .image-area>div:nth-child(1) {
    position: absolute;
@@ -309,15 +327,19 @@ ul>li {
    background: #f2f2f2;
    right: -100px;
    top: -100px;
+  transform: scale(0.8);
+  transition: 0.6s;
+
 }
-.image-area>div:nth-child(2) {
+.null-box {
   width: 95%;
-  height: 95%;
+  height: 0;
   left: 0;
   background: gold;
   transition: 0.6s;
   position: absolute;
   bottom: 0;
+  transition: 0.3s;  
 }
 #view-2 .image-area {
     width: 450px;
@@ -387,6 +409,7 @@ ul>li {
 }*/
 
 /*=====wave=====*/
+
 .wave-wrap { 
   /*height: 5%;*/
   width:100%;
@@ -402,6 +425,7 @@ ul>li {
   height: 200px;
   animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
+
 }
 
 .wave:nth-of-type(2) {
@@ -439,7 +463,7 @@ ul>li {
 
 }
 .wave-svg>svg>path, .wave-side-svg>svg>path  {
-  fill: #3e9ffb;
+  fill: #63abea;
 }
 #view-2>.wave-svg {
   right: 0;
@@ -455,7 +479,7 @@ ul>li {
   width: 65%;
   height: 100%;
   z-index: 1; 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' id='Layer_1' viewBox='0 0 1046.022 695.777'%3E%3Cpath fill='%233e9ffb' d='M1044.333,421.294c-5.401-44.685-22.715-86.533-54.46-122.466c-12.473-14.118-27.518-27.862-43.308-38.223 c-38.34-25.155-83.616-41.812-128.118-52.09c-25.322-5.849-51.286-9.484-77.147-11.948c-84.089-8.012-168.21-7.981-252.449-12.348 c-23.021-1.193-46.013-3.496-68.668-7.829c-25.826-4.938-51.278-11.924-75.84-21.337c-20.667-7.921-40.729-17.324-59.901-28.395 C214.799,86.444,158.708,25.573,80.791,0c-3.779,1.883-7.252,4.002-10.244,6.287c-31.73,24.228-43.849,74.057-52.938,110.795 C-7.18,217.281-0.344,324.156,5.629,426.214c2.132,36.429,2.407,72.977,8.707,109.03c2.837,16.234,3.637,37.676,16.347,49.875 c11.272,10.818,27.994,9.114,42.351,8.187c50.08-3.238,101.963,1.874,151.811,6.754c51.055,4.998,101.87,12.729,151.944,23.919 c115.616,25.838,230.234,72.088,350.171,71.798c34.314-0.084,68.331-3.754,101.489-12.849 c73.773-20.234,164.958-60.721,196.986-135.744C1042.499,507.213,1049.558,464.514,1044.333,421.294z'/%3E%3C/svg%3E");
+ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 1046.022 695.777' %3E%3Cpath fill='%2363abea' d='M1044.333,421.294c-5.401-44.685-22.715-86.533-54.46-122.466c-12.473-14.118-27.518-27.862-43.308-38.223 c-38.34-25.155-83.616-41.812-128.118-52.09c-25.322-5.849-51.286-9.484-77.147-11.948c-84.089-8.012-168.21-7.981-252.449-12.348 c-23.021-1.193-46.013-3.496-68.668-7.829c-25.826-4.938-51.278-11.924-75.84-21.337c-20.667-7.921-40.729-17.324-59.901-28.395 C214.799,86.444,158.708,25.573,80.791,0c-3.779,1.883-7.252,4.002-10.244,6.287c-31.73,24.228-43.849,74.057-52.938,110.795 C-7.18,217.281-0.344,324.156,5.629,426.214c2.132,36.429,2.407,72.977,8.707,109.03c2.837,16.234,3.637,37.676,16.347,49.875 c11.272,10.818,27.994,9.114,42.351,8.187c50.08-3.238,101.963,1.874,151.811,6.754c51.055,4.998,101.87,12.729,151.944,23.919 c115.616,25.838,230.234,72.088,350.171,71.798c34.314-0.084,68.331-3.754,101.489-12.849 c73.773-20.234,164.958-60.721,196.986-135.744C1042.499,507.213,1049.558,464.514,1044.333,421.294z'/%3E%3C/svg%3E%0A");
  background-repeat: no-repeat;
   background-size: 100%;
   animation: side-swell 4s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite
@@ -510,8 +534,10 @@ ul>li {
 .swiper-slide {
   background-repeat: no-repeat;
   background-size: cover;
+
 }
-#tab-button {
+
+/*#tab-button {
   font-size: 14px;
   font-weight: 700;
   position: absolute;
@@ -556,24 +582,55 @@ ul>li {
   transform: translate(-50%,-50%);
   display: none;
 
-}
+}*/
 #box-wrap {
-  width: 960px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+    height: 85%;
+    /* width: 100%; */
+    position: relative;
+    /* text-align: center; */
+    left: 50%;
+    transform: translate(-50%);
+    top: 5%;
   
 }
 .box {
-  margin: 0 10px;
+  margin: 0 2px;
   position: relative;
-  width: 300px;
-  height: 500px;
+  width: 380px;
+  height: 540px;
   background-color: #fff;
+  top: 20px;
+  opacity: 0;
+  transition: 0.6s;
 }
 .food-thumb {
   width: 100%;
   height: 300px;
   background-color: #f2f2f2;
+}
+#preloader {
+  position: fixed;
+  z-index: 2;
+}
+#food-text-wrap {
+  position: relative;
+  height: 15%;
+}
+#food-text-wrap h1 {
+  font-size: 50px;
+  opacity: 0;
+
+}
+#food-text-wrap p {
+  font-size: 20px;
+  padding-top: 20px;
+
+}
+#food-text-wrap>span {
+  position: absolute;
+  width: 300px;
+  height: 0px;
+  background-color: #fff;  
+  bottom: 36px; 
+  z-index: 2;
 }
