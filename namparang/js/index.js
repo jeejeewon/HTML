@@ -1,29 +1,94 @@
 $(function() {
 
+	// $("#preloader").delay(200).slideUp(800);
+	
+	loading();	
+	setTimeout(function() {	
+		titleBubbles();	
+	},1800); 
+
+	setTimeout(function() {		
+		$(".wave-wrap").animate({
+			bottom: '0'
+		},800);		
+	},3000); 
+	// setTimeout(function() {		
+	// 	$("#main-title").css({
+	// 		backgroundImage: 'linear-gradient(to top, #fff 50px, #63abea 0%, #73eef5 100%)',
+	// 		transition: '1s ease'
+	// 	});
+	// },3600); 
+	
+
 	resize();	
-	// scrollUpDown();
-	titleBubbles();
+	// scrollUpDown();	
 	nav();
 	window.onresize = function() {
 		resize();
 		
 	};	
-
-	$("#title>span").each(function(i) {		 
-		$(this).stop().animate({
-			top: '0',
-			opacity: '1'
-		}, 100 * (i + 0.1),'easeInOutBack');
+	$("#burger-wrap").click(function(){		
+		$("#top-nav-wrap").animate({
+			top: '0'
+		},600);
+		$("#top-nav-wrap").mouseleave(function(){
+			$("#top-nav-wrap").animate({
+				top: '-100px'
+			},600);
+		});		 
+	});
+	$("#bottom-nav").click(function(){		
+		$("#bottom-nav-wrap").animate({
+			bottom: '0'
+		},600);
+		$("#bottom-nav-wrap").mouseleave(function(){
+			$("#bottom-nav-wrap").animate({
+				bottom: '-400px'
+			},600);
+		});		 
 	});
 
+	hoverMenu();	
 
-   $(window).scroll(function(e) {           
-        console.log($(window).scrollTop());   
-        showTitle();
-        showImage();
-        showFoodBox(); 
-             
-    });
+	setTimeout(function() {		
+		$(window).scroll(function(e) {           
+			console.log($(window).scrollTop());   
+			showTitle();
+			showImage();
+			showFoodBox();
+			if ($(window).scrollTop() < 900) {
+					$("#bottom-nav-wrap").stop().animate({			
+						bottom: '-500px',						
+					},300);	
+				} 
+				else if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 4356) {		
+					$("#bottom-nav-wrap").stop().animate({						
+						bottom: '-400px'						
+					},300);						
+				};
+				if ($(window).scrollTop() < 4356) {	
+					setTimeout(function() {	
+						$("#bottom-nav-wrap").css({						
+							position: 'fixed'			
+						});
+					},300);								
+				} else if ($(window).scrollTop() >= 4356) {	
+					$("#bottom-nav-wrap").stop().animate({						
+						bottom: '0'						
+					},300);	
+					setTimeout(function() {	
+						$("#bottom-nav-wrap").css({							
+							position: 'absolute'			
+						});	
+					},300);			
+									
+				};            
+			});
+		
+	},4000); 
+
+
+ 
  	goto();
 
  	$('.swiper-slide').ripples({
@@ -76,8 +141,7 @@ function resize() {
 	var wrapDiv = document.querySelectorAll(".contents-wrap");	
 	wrapDiv.forEach(function(el){		
 		el.style.height = window.innerHeight + "px";	
-	});
-	
+	});	
 };
 function nav() {
 	$("#to-top").click(function(){
@@ -98,6 +162,9 @@ function nav() {
 	});
 	$("#5").click(function(){
 		goto("#food");
+	});
+	$("#scroll").click(function(){
+		goto("#view-1");
 	});
 
 	$("#ticket").click(function(){
@@ -215,7 +282,6 @@ function showFoodBox() {
 		},1800); clearTimeout();
 	};
 };
-
  
 function scrollUpDown() {
 	var oldScroll = 0;
@@ -237,7 +303,6 @@ function scrollUpDown() {
 	});
 };
 
-
 function titleBubbles() {
 	//효과 위치
     var bArray = [];
@@ -248,12 +313,10 @@ function titleBubbles() {
     for (var i = 0; i < $('.title-bubbles').width(); i++) {
         bArray.push(i); //배열끝에 추가
     }
-
     //랜덤 배열 생성
     function randomValue(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
-    }
- 
+    } 
     //새 버블을 만드는 데 사용되는 setInterval 
     setInterval(function(){         
         //랜덤 사이즈
@@ -271,4 +334,78 @@ function titleBubbles() {
         ); 
     }, 350);
 };
+
+function hoverMenu() {
+	var timer = [];
+		$("#burger-wrap").each(function(i) {
+			timer[i] = null;
+			$(this).hover(function() {
+				(function(el) {
+					timer[i] = setTimeout(function() {
+						$("#burger-text").stop().animate({
+								right: '-45px'
+							},300);
+							$(".icon-bar:nth-child(1)").stop().animate({
+								top: '-5px'
+							},300);
+							$(".icon-bar:nth-child(3)").stop().animate({
+								top: '17px'
+							},300);
+							setTimeout(function() {
+								$(".icon-bar").stop().animate({	
+									width: '130%'					
+								}, 600,'easeOutElastic');					
+							},400); clearTimeout();								
+					}, 300);					
+				})($(this));
+			}, function() {	
+			$(".icon-bar").stop().animate({	
+					width: '100%'					
+				}, 300,'easeOutElastic');					
+				setTimeout(function() {
+					$("#burger-text").stop().animate({
+					right: '-40px'
+					},300);
+					$(".icon-bar:nth-child(1)").stop().animate({
+						top: '0'
+					},300);
+					$(".icon-bar:nth-child(3)").stop().animate({
+						top: '12px'
+					},300);			
+				},400); clearTimeout();					
+				clearTimeout(timer[i]);
+			});
+		});				
+};
+function loading() {
+	$("#loading").each(function(){
+		$(this).delay(500).css({
+			backgroundColor: '#009bdf'
+		});
+	});
+	$("#loading-wave").delay(500).animate({
+		opacity: '0'
+	});
+	setTimeout(function() {
+		$("#loading").animate({
+			opacity: '0.5',
+			height: '0'
+		},800,'easeInOutBack');		
+	},800);
+	setTimeout(function() {				
+		$("#title>span").each(function(i) {		 
+			$(this).stop().animate({
+				top: '0',
+				opacity: '1'
+			}, 100 * (i + 0.1),'easeInOutBack');
+		});
+	},1800); 
+	setTimeout(function() {		
+		$("#scroll").animate({
+			opacity: '1',
+			bottom: '120px'
+		},1200,'easeInOutBack');	
+	},2800); 
+};	
+
 

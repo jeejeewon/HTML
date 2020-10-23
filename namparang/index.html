@@ -15,19 +15,49 @@
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<script type="text/javascript" src="./js/ripples.js"></script>
 	<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
-
 	<!-- <script type="text/javascript" src="./js/full-page-scroll.js"></script> -->
 	<script type="text/javascript" src="./js/index.js"></script>		
 </head>
 	<body id="top">
-		<div id="preloader"></div>
-		<div id="nav-bar">
-			<!-- <div id="logo"></div> -->
-			<div id="lang" class="clear-both">
-				<button>한국</button>
-				<button>English</button>				
-			</div>			
-		</div>	
+		<!-- <div id="preloader"></div> -->
+		<div id="loading">
+			<div id="loading-wave" class="loading-wave">
+		      <div class="sp sp-wave"></div>		     
+		    </div>
+		</div>
+		<div id="frame">
+			<header>
+				<div id="top-nav-wrap">
+					<div id="nav-bar">
+						<ul>
+							<li>국내여행</li>
+							<li>제주·섬</li>
+							<li>해외여행</li>
+							<li>커뮤니티</li>
+							<li>단체견적문의</li>
+							<li>고객센터</li>
+						</ul>
+					</div>					
+					<div id="logo-area"></div>			
+				</div>	
+				 <div id="nav-button">
+				 	<div id="burger-wrap">
+				 		<div id="burger">
+					 		<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span id="burger-text">menu</span>		
+					 	</div>				 		
+				 	</div>				 	
+				 </div>				
+				<div id="plan">
+					<div id="default">
+						<div></div>
+					</div>
+					<div id="active"></div>
+				</div>
+			</header>
+		</div>		
 		<nav>	
 			<ul>
 				<li id="1">1</li>
@@ -57,12 +87,12 @@
 							<span>일</span>  
 							<span>주</span> 					
 						</div>
-						<div>
+						<!-- <div>
 							<p>글로벌 관광거점, 남해안의 물결 시작</p>
 							<p>남해안의 쪽빛 물결이 세계로 나아간다는 의미를 담고 있으며,
 							해안선과 다도해를 물결과 물방울을 표현. 기존 종단 여행에서 횡단여행으로 동과 서,
 							8개 지역을 3개의 횡단(하늘/내륙/바다)로 연결한다는 의미를 가지고 있습니다.</p>			
-						</div>					
+						</div>		 -->			
 						<div>
 							<button></button>
 							<span></span>
@@ -75,9 +105,15 @@
 					<div class="back" id="b2"></div>
 					<div class="back" id="b3"></div>					
 				</div>
-				<div class="wave-wrap float-left" >
+				<div id="line"></div>
+				<!-- <div class="wave-wrap float-left" >
 					<div class="wave"></div>
 					<div class="wave"></div>				
+				</div> -->
+				<div id="video">
+					<video autoplay muted loop playsinline>
+						<source src="./video/tour.mp4" type="video/mp4">
+					</video>
 				</div>
 			</section>
 			<section id="view-1" class="contents-wrap">
@@ -175,11 +211,11 @@
 						</div>
 					</div>			
 				</div>
-				<div id="wave-side-wrap">
+				<!-- <div id="wave-side-wrap">
 					<div id="fish"></div>					
 					<div class="wave-side-svg"></div>
 					<div class="wave-side-svg"></div>				
-				</div>
+				</div> -->
 			</section>
 			<section id="view-3" class="contents-wrap">				
 				<div class="contents">		
@@ -216,24 +252,24 @@
 							<span class="button-text">Learn more</span>		
 						</div>
 					</div>							
-						<!-- <div id="video">
+					<!-- 	<div id="video">
 							<video muted loop playsinline>
 								<source src="./video/tour.mp4" type="video/mp4">
 							</video>
-						</div>
-						<div id="icon">
+						</div> -->
+					<!-- 	<div id="icon">
 							<div></div>
 							<div></div>
 							<div></div>
 							<div></div>
 						</div>						
-					</div> -->
-				</div>
-				<div class="wave-svg">
+					</div>
+				</div> -->
+				<!-- <div class="wave-svg">
 					<svg version="1.1" viewBox="0 0 1600 198">
 						<path enable-background="new " d="M1599.993,121C1289,121,1190.102-0.25,789,0C389,0,289,121,0,121v77h1600C1600,198,1599.993,150,1599.993,121z"/>
 					</svg>
-				</div>							
+				</div>		 -->					
 			</section>
 			<section id="food" class="contents-wrap bubbles">				
 				<div class="contents clear-both">
@@ -255,7 +291,15 @@
 					</div>							
 				</div>
 			</section>
-			<section id="footer">
+			<footer>
+				<div id="bottom-nav-wrap">
+					<div id="bottom-nav">
+						<div>more</div>
+					</div>	
+					<div id="buttom-bar"></div>					
+				</div>						
+			</footer>
+<!-- 			<section id="footer">
 				<div class="wave-svg">
 					<svg version="1.1" viewBox="0 0 1600 198">
 						<path enable-background="new " d="M1599.993,121C1289,121,1190.102-0.25,789,0C389,0,289,121,0,121v77h1600C1600,198,1599.993,150,1599.993,121z"/>
@@ -264,7 +308,7 @@
 				<div>
 					<div id="search"></div>
 				</div>
-			</section>				
+			</section>	 -->			
 		</div>		
 	</body>
 </html>
