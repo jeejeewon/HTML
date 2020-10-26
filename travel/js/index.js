@@ -5,10 +5,11 @@ $(function() {
 	resize();	
 	// scrollUpDown();	
 	nav();
+	hoverMenu();
 	window.onresize = function() {
-		resize();
-		
+		resize();		
 	};	
+
 	$("#burger-wrap").click(function(){		
 		$("#top-nav-wrap").animate({
 			top: '0'
@@ -32,7 +33,7 @@ $(function() {
 
 	
 	hoverBox();
-	hoverMenu();	
+	showNews();	
 
 	setTimeout(function() {		
 		$(window).scroll(function(e) {           
@@ -66,12 +67,25 @@ $(function() {
 									
 				};            
 			});
+
+		/*count*/
+		if ($(window).scrollTop() >= 3000) {
+			var finish = 0;
+			var countValue = document.querySelectorAll(".countValue");	
+			finish = 0;	
+			var lotto = getLotto();	
+			for(var i  = 0; i < countValue.length; i++) {
+				counter(countValue[i], 0, lotto[i], 1500);
+			};
+		};	
 		
 	},4000); 
  
  	goto();
- 	count();
 
+ 	
+
+	/*swiper*/
 	var mySwiper = new Swiper('.swiper-container', {
 	  // Optional parameters
 	  direction: 'vertical',
@@ -130,83 +144,82 @@ function nav() {
 	$("#scroll").click(function(){
 		goto("#page-1");
 	});
-
 };
 
-// function showTitle() {
-// 	if ($(window).scrollTop() >= 900) {			
-// 		$("#page-1 .title-area>span").each(function(i) {		    
-// 			$(this).stop().animate({				
-// 				height: '60px'
-// 			}, 100 * (i + 0.1),'easeInQuart');
-// 		});		
-// 		setTimeout(function() {
-// 			$("#page-1 .title-area>span>p").each(function(i) {		
-// 				$(this).stop().animate({						
-// 					opacity: '1',
-// 					top: '0'
-// 				}, 100 * (i + 0.1),'easeOutElastic');							
-// 			});				
-// 		},800); clearTimeout();		
-// 	};
-// 	if ($(window).scrollTop() >= 1900) {		
-// 		$("#page-2 .title-area>span").each(function(i) {		    
-// 			$(this).stop().animate({				
-// 				height: '60px'
-// 			}, 100 * (i + 0.1),'easeInQuart');
-// 		});
-// 		setTimeout(function() {
-// 			$("#page-2 .title-area>span>p").each(function(i) {		
-// 				$(this).stop().animate({	
-// 					opacity: '1',
-// 					top: '0'
-// 				}, 100 * (i + 0.1),'easeOutElastic');					
-// 			});	
-// 		},800); clearTimeout();	
-// 	};
-// 	if ($(window).scrollTop() >= 3000) {	
-// 		$("#page-3 .title-area>span").each(function(i) {		    
-// 			$(this).stop().animate({				
-// 				height: '60px'
-// 			}, 100 * (i + 0.1),'easeInQuart');
-// 		});
-// 		setTimeout(function() {
-// 			$("#page-3 .title-area>span>p").each(function(i) {		
-// 				$(this).stop().animate({	
-// 					opacity: '1',
-// 					top: '0'
-// 				}, 100 * (i + 0.1),'easeOutElastic');					
-// 			});	
-// 		},800); clearTimeout();	
-// 	};
-// 	if ($(window).scrollTop() >= 4000) {		
-// 		$("#food-text-wrap>span").stop().animate({
-// 			 height: '65px'
-// 		},800,'easeInOutBack');		
-// 		setTimeout(function() {
-// 			$("#food-text-wrap h1").stop().animate({
-// 			 opacity: '1'
-// 		},100);
-// 			$("#food-text-wrap>span").stop().animate({
-// 				 height: '0',
-// 				 top:'0'
-// 			},800,'easeInOutBack');					
-// 		},900); clearTimeout();
-// 	};
-// };
+function showTitle() {
+	if ($(window).scrollTop() >= 900) {			
+		$("#page-1 .title-area>span").each(function(i) {		    
+			$(this).stop().animate({				
+				height: '60px'
+			}, 100 * (i + 0.1),'easeInQuart');
+		});		
+		setTimeout(function() {
+			$("#page-1 .title-area>span>p").each(function(i) {		
+				$(this).stop().animate({						
+					opacity: '1',
+					top: '0'
+				}, 100 * (i + 0.1),'easeOutElastic');							
+			});				
+		},800); clearTimeout();		
+	};
+	if ($(window).scrollTop() >= 1900) {		
+		$("#page-2 .title-area>span").each(function(i) {		    
+			$(this).stop().animate({				
+				height: '60px'
+			}, 100 * (i + 0.1),'easeInQuart');
+		});
+		setTimeout(function() {
+			$("#page-2 .title-area>span>p").each(function(i) {		
+				$(this).stop().animate({	
+					opacity: '1',
+					top: '0'
+				}, 100 * (i + 0.1),'easeOutElastic');					
+			});	
+		},800); clearTimeout();	
+	};
+	if ($(window).scrollTop() >= 3000) {	
+		$("#page-3 .title-area>span").each(function(i) {		    
+			$(this).stop().animate({				
+				height: '60px'
+			}, 100 * (i + 0.1),'easeInQuart');
+		});
+		setTimeout(function() {
+			$("#page-3 .title-area>span>p").each(function(i) {		
+				$(this).stop().animate({	
+					opacity: '1',
+					top: '0'
+				}, 100 * (i + 0.1),'easeOutElastic');					
+			});	
+		},800); clearTimeout();	
+	};
+	if ($(window).scrollTop() >= 4000) {		
+		$("#food-text-wrap>span").stop().animate({
+			 height: '65px'
+		},800,'easeInOutBack');		
+		setTimeout(function() {
+			$("#food-text-wrap h1").stop().animate({
+			 opacity: '1'
+		},100);
+			$("#food-text-wrap>span").stop().animate({
+				 height: '0',
+				 top:'0'
+			},800,'easeInOutBack');					
+		},900); clearTimeout();
+	};
+};
 
-// function showFoodBox() {
-// 	if ($(window).scrollTop() >= 4000) {
-// 		setTimeout(function() {
-// 			$(".box").each(function(i) {		    
-// 			$(this).stop().animate({				
-// 				top: '0',
-// 				opacity: '1'
-// 			}, 600 * (i + 0.1),'easeInQuart');
-// 		});
-// 		},1800); clearTimeout();
-// 	};
-// };
+function showNews() {
+	if ($(window).scrollTop() >= 4000) {
+		setTimeout(function() {
+			$(".news").each(function(i) {		    
+			$(this).stop().animate({				
+				top: '0',
+				opacity: '1'
+			}, 600 * (i + 0.1),'easeInQuart');
+		});
+		},1800); clearTimeout();
+	};
+};
  
 function scrollUpDown() { //스크롤업다운체크용
 	var oldScroll = 0;
@@ -332,29 +345,44 @@ function hoverBox() {
 		});
 	});				
 };
-function count() {
-
-	var timer = [];
-	var count = document.getElementsByClassName(countValue);
-	
-	//정도
-	var limit = [50, 100, 80, 70];
-	//속도 (위와 갯수 맞춰야함)
-	var speed = [50, 50, 50, 50];
-
-	for(var i = 0; i < count.length; i++) {
-		(function(i) { //즉시실행함수 시작 <---시간차 때문에 걸어줘야함
-			timer[i] = setInterval(function() {
-				count[i].value++;
-				count[i].innerText = count[i].value + "%";
-				if(count[i].value == limit[i]) {
-					clearTimeout(timer[i]);
-				}
-			}, speed[i]); //<---빨라서 for문이 먼저 끝나버림
-		})(i); //즉시실행함수 끝
+function counter(el ,start, end, duration) {
+		var finish = 0;
+		var increment = end > start ? 1 : -1;
+		var rang = end - start;
+		var step  = Math.abs(Math.floor(duration/rang)); //end까지의 간격(속도)를 동일하게 계산
+		var timer = setInterval(function(){
+			el.innerHTML = start;
+			if(start == end) {
+				clearInterval(timer);
+				finish++;				
+			}
+			start += increment;
+		}, step)
 	}
-	
 
-}
+function getLotto() {
+	var max = 4; 
+	var lotto = new Array(max); 
+	var counter = 0;
+	var flag = true; 
+	while (counter < max) {
+		var num = Math.floor(Math.random()*1000) + 1
+		for(var i = 0; i < counter; i++) { 
+			if ((lotto[i]) == num) { 
+				flag = false;
+			}
+		}
+		if(flag) { 
+			lotto[counter] = num;
+			counter++;		
+		}
+		flag = true; 
+	}	
+	return lotto;
+};
+
+
+
+	
 
 
