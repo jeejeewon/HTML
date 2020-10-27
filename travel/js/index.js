@@ -23,61 +23,73 @@ $(function() {
 	$("#bottom-nav").click(function(){		
 		$("#bottom-nav-wrap").animate({
 			bottom: '0'
-		},600);
-		$("#bottom-nav-wrap").mouseleave(function(){
-			$("#bottom-nav-wrap").animate({
-				bottom: '-400px'
-			},600);
-		});		 
+		},600,'easeOutElastic');
 	});
-
+	/*bottom active*/
+	
+	$("#bottom-bar").mouseleave(function(){
+		if($(window).scrollTop() + $(window).height() != $(document).height()) {
+			$("#bottom-nav-wrap").animate({
+				bottom: '-300px'
+			},600,'easeOutElastic');
+		};
+	});			
+	
+	
 	
 	hoverBox();
 	showNews();	
+	setTimeout(function() {
+		/*count*/
+			var f = true;
+			if ($(window).scrollTop() >= 2500 ) {	
+				if(f == true) {		
+					var countValue = document.querySelectorAll(".countValue");		
+					var random = getRandom();	
+					for(var i  = 0; i < countValue.length; i++) {
+						counter(countValue[i], 0, random[i], 1000);
+					}; 					
+				}; f = false;
+			};
 
-	setTimeout(function() {		
+		/*scroll*/
 		$(window).scroll(function(e) {           
 			console.log($(window).scrollTop());
-			
+			// if($(window).scrollTop() + $(window).height() == $(document).height()) { alert("bottom!"); } //바닥확인
+
+			/*side nav*/			
+			if ($(window).scrollTop() >= 800) {
+					$("#to-top").slideDown(600);
+			} else {		
+				$("#to-top").slideUp(600);					
+			};
+
+			/*bottom nav*/			
 			if ($(window).scrollTop() < 900) {
 					$("#bottom-nav-wrap").stop().animate({			
-						bottom: '-500px',						
-					},300);	
+						bottom: '-400px',						
+					},300,'easeOutElastic');	
 				} 
-				else if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 4356) {		
-					$("#bottom-nav-wrap").stop().animate({						
-						bottom: '-400px'						
-					},300);						
+				else if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 4040) {		
+					$("#bottom-nav-wrap").stop().animate({				
+						bottom: '-300px'						
+					},300,'easeOutElastic');						
 				};
-				if ($(window).scrollTop() < 4356) {	
-					setTimeout(function() {	
-						$("#bottom-nav-wrap").css({						
-							position: 'fixed'			
-						});
-					},300);								
-				} else if ($(window).scrollTop() >= 4356) {	
-					$("#bottom-nav-wrap").stop().animate({						
+				if($(window).scrollTop() + $(window).height() != $(document).height()) {	
+					$("#bottom-nav-wrap").css({				
+						position: 'fixed'			
+					});											
+				} else {	
+					$("#bottom-nav-wrap").stop().animate({				
 						bottom: '0'						
-					},300);	
+					},300,'easeOutElastic');							
 					setTimeout(function() {	
-						$("#bottom-nav-wrap").css({							
+						$("#bottom-nav-wrap").css({					
 							position: 'absolute'			
 						});	
-					},300);			
-									
+					},300);									
 				};            
-			});
-
-		/*count*/
-		if ($(window).scrollTop() >= 3000) {
-			var finish = 0;
-			var countValue = document.querySelectorAll(".countValue");	
-			finish = 0;	
-			var lotto = getLotto();	
-			for(var i  = 0; i < countValue.length; i++) {
-				counter(countValue[i], 0, lotto[i], 1500);
-			};
-		};	
+			});			
 		
 	},4000); 
  
@@ -360,25 +372,25 @@ function counter(el ,start, end, duration) {
 		}, step)
 	}
 
-function getLotto() {
+function getRandom() {
 	var max = 4; 
-	var lotto = new Array(max); 
+	var random = new Array(max); 
 	var counter = 0;
 	var flag = true; 
 	while (counter < max) {
 		var num = Math.floor(Math.random()*1000) + 1
 		for(var i = 0; i < counter; i++) { 
-			if ((lotto[i]) == num) { 
+			if ((random[i]) == num) { 
 				flag = false;
 			}
 		}
 		if(flag) { 
-			lotto[counter] = num;
+			random[counter] = num;
 			counter++;		
 		}
 		flag = true; 
 	}	
-	return lotto;
+	return random;
 };
 
 
