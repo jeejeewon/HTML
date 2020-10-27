@@ -6,19 +6,16 @@ $(function() {
     });
 
 	$("button.active").click(function(e){
-		e.preventDefault();
-	    var easeInOutBack = $(this).attr("data-easeInOutBack");
-	    var easeInQuart = $(this).attr("data-easeInQuart");	    
-
+		e.preventDefault();	   
 		$("#popup").slideDown(800);	
 		if($(window).width() < 600) { 
 			$("#popup").animate({
 				height: '95%'			
-			},800, easeInQuart);
+			},800, 'easeInQuart');
 		} else {
 			$("#popup").animate({
 				height: '80%'						
-			},800, easeInQuart);
+			},800, 'easeInQuart');
 		}
 		$("#popup-close").show(500);
 		// $("#popup").fadeIn(800);
@@ -43,9 +40,9 @@ $(function() {
 				$(this).stop().animate({	
 					opacity: '1',
 					top: '0'
-				}, 600 * (i + 0.5), easeInOutBack);					
+				}, 600 * (i + 0.5), 'easeInOutBack');					
 			});	
-		},800, easeInOutBack); clearTimeout();	
+		},800, 'easeInOutBack'); clearTimeout();	
 	});	
 
 	$("#popup-close").click(function(){		

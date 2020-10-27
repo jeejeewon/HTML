@@ -813,17 +813,54 @@ section[id*=page-] {
   text-decoration: underline;
 }
 #page-7 {
-  height: 150px;
+  height: 350px;
+}
+#survice-wrap>div h4 {
+  margin-bottom: 20px;
 }
 #counsel {
-  width: 500px;
+  width: 70%;
+  height: 340px;  
 }
 #guide {
   width: 300px;
 }
 #counsel>div:nth-child(2) {
+  width: 25%;
+  height: 100%;
+  background-color: #ccc;
+}
+#counsel>div {
+  border-top: 2px solid #ccc;
+}
+#grup-wrap {
+  width: 70%;
+  height: 100%;
+}
+.grup {
   width: 200px;
   height: 100%;
+}
+#guide {
+  width: 30%;
+
+}
+#guide>ul {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  width: 275px;  
+  height: 340px;
+}
+#guide>ul li {
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 50%;
+height: 85px;
+    line-height: 85px;
+  font-size: 14px;
+  text-align: center;
 }
 
 footer {
