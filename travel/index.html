@@ -98,8 +98,7 @@
 			<section id="page-1" class="contents-wrap">
 				<div class="contents">					
 					<div id="intro-box-wrap" class="clear-both">
-						<h2>여행을 시작하세요!</h2>
-						<p class="line-h-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<h2>GOTravel에서 여행을 시작하세요!</h2>					
 						<div class="intro-box">
 							<div class="icon">
 								<i>i</i>
@@ -219,23 +218,15 @@
 							<button>자세히 보기<img src="./img/next.png"></button>	
 						</div>
 						<div id="hotel-slide-area" class="float-right">
-							<div class="swiper-container">
-							    <!-- Additional required wrapper -->
-							    <div class="swiper-wrapper">
-							        <!-- Slides -->
+							<div class="swiper-container">							   
+							    <div class="swiper-wrapper">							       
 							        <div class="swiper-slide">Slide 1</div>
 							        <div class="swiper-slide">Slide 2</div>
-							        <div class="swiper-slide">Slide 3</div>
-							        ...
-							    </div>
-							    <!-- If we need pagination -->
+							        <div class="swiper-slide">Slide 3</div>							   
+							    </div>							
 							    <div class="swiper-pagination"></div>
-
-							    <!-- If we need navigation buttons -->
 							    <div class="swiper-button-prev"></div>
 							    <div class="swiper-button-next"></div>
-
-							    <!-- If we need scrollbar -->
 							    <div class="swiper-scrollbar"></div>
 							</div>								
 						</div>					
@@ -245,7 +236,16 @@
 			<section id="page-5">
 				<div class="contents">
 					<div id="count-wrap" class="clear-both">
-						<div id="count-img" class="float-left">					
+						<div id="count-img-wrap" class="float-left swiper-container">
+							<div class="swiper-wrapper">	
+								<div class="count-img swiper-slide">1</div>				
+								<div class="count-img swiper-slide">2</div>				
+								<div class="count-img swiper-slide">3</div>
+							</div>
+							    <div class="swiper-pagination"></div>
+							    <div class="swiper-button-prev"></div>
+							    <div class="swiper-button-next"></div>
+							    <div class="swiper-scrollbar"></div>						
 						</div>
 						<div id="count-info" class="float-right">
 							<div id="count-text">
@@ -311,30 +311,39 @@
 				<div class="contents">
 					<div id="survice-wrap" class="clear-both">
 						<div id="counsel" class="clear-both float-left">
-							<h4>상담문의</h4>
+							<h3>상담문의</h3>
 							<div class="float-left">
-								<p>고객센터</p>
-								<h4>000-0000</h4>
-								<span>자주하는 질문</span>
-								<span>ARS상담번호 안내</span>			
+								<h2>고객센터</h2>
+								<h2>1234-5678</h2>
+								<h4>법인고객 전용상담</h4>
+								<h4>1566-0072</h4>
+								<h4>안심카드결제 ARS</h4>
+								<h4>1234-5678</h4>								
 							</div>		
 							<div id="grup-wrap" class="float-left">
 								<div class="grup float-left">
-									<p>국내 여행 문의</p>
-									<p><span>평일: 09:00~18:00</span>
-									※코로나 바이러스19로 인한 근무 시간 축소로 주말 및 야간 상담 서비스가 임시 중단 됩니다. 더 나은 서비스로 찾아뵐 수 있도록 하겠습니다.</p>		
+									<p>상담 번호 안내<span>상세보기<span></p>	
+									<strong>1번</strong>
+									<span>여행상담</span><br/>
+									<strong>2번</strong>
+									<span>항공권</span><br/>
+									<strong>3번</strong>
+									<span>호텔,현지투어,패스문의</span><br/>
+									<span class="num">① 국내호텔</span><br/>
+									<span class="num">② 현지투어,패스</span><br/>	
+									<strong>0번</strong><span>ARS 결제</span>
+										
 								</div>
-								<div class="grup float-left">
-									<p>상담번호 안내</p>
-									<p>1번 예약상담</p>
-									<p>2번 ARS 예약 확인 및 결제 확인</p>
-									<p>3번 마일리지 및 제휴카드, 기타문의</p>
+								<div class="grup float-right">
+									<p>상담시간 안내</p>
+									<strong>평일: 09:00~18:00<br/></strong>
+									<span>※코로나 바이러스19로 인한 근무 시간 축소로 주말 및 야간 상담 서비스가 임시 중단 됩니다. 더 나은 서비스로 찾아뵐 수 있도록 하겠습니다.</span>	
 								</div>								
 							</div>							
 						</div>
 						<div id="guide" class="float-right">
-							<h4>이용안내</h4>
-							<ul compact="clear-both">
+							<h3>이용안내</h3>
+							<ul class="clear-both">
 								<li>고객센터</li>
 								<li>여행정보</li>
 								<li>자주 묻는 질문</li>
@@ -348,7 +357,10 @@
 					</div>								
 				</div>
 			</section>
-			<footer>
+			<section id="page-8">
+				<div id="notice"></div>
+			</section>
+			<footer>				
 				<div id="bottom-nav-wrap">
 					<div id="bottom-nav">					
 						<div id="nav-button-wrap">
@@ -357,10 +369,65 @@
 							</div>
 							<span>more<br/>info</spna>
 						</div>
-					</div>	
-					<div id="bottom-bar">
-						<input type="text" name="">
-					</div>			
+					</div>
+
+					<div id="bottom-bar" class="clear-both">
+						<div id="input-wrap">
+							<input type="text" name="email" placeholder="이메일을 입력하세요" class="float-left">
+							<button class="float-right">뉴스레터 신청</button>
+						</div>			
+						<div id="contents-wrap">
+							<div class="contents clear-both">								
+								<div id="company-wrap" class="float-left clear-both">	
+									<ul class="float-left">
+										<li>회사소개</li>
+										<li><b>개인정보처리방침</b></li>
+										<li>여행약관</li>
+										<li>이용약관</li>
+										<li>여행보험</li>
+										<li>온라인제휴안내</li>				
+									</ul>					
+									<div></div>					
+									<div id="company-logo" class="float-left">
+										<span>GO</span><br/>
+										<span>TRAVEL</span>
+									</div>
+									<div id="company-info" class="float-left">
+										<strong>(주)고트래블</strong><span>&#x2758;</span>대표 일이삼<span>&#x2758;</span>서울특별시 서초구 강남대로 사오빌딩 6층</p><p>사업자등록번호 000-00-00000<span>&#x2758;</span>관광사업자등록증번호 제2006-000003호</p>
+										<p>통신판매업 신고번호 제 2020-서울서초-0000호</p>
+										<p>Copyright © GOTravel All rights reserved.</p>
+									</div>
+								</div>
+								<div id="more-info" class="float-right">
+									<div id="number-wrap" class="clear-both">
+										<span class="float-left"><b>상담 대표번호</b></span><br/>
+										<div class="float-left">
+											<span>여행/호텔 상담<strong>1234-5678</strong></span>
+											<span>서울지사<strong>1234-5678</strong></span><br/>
+											<span>항공권 상담<strong>1234-5678</strong></span>
+											<span>부산지사<strong>1234-5678</strong></span><br/>	
+										</div>										
+									</div>
+									<div id="select-wrap">
+										<select name="family">
+											<option>패밀리 사이트</option>
+											<option>GO면세점</option>
+											<option>고트래블제주</option>
+											<option>고트래블비즈니스</option>
+											<option>호텔앤리조트</option>		
+										</select>
+										<select name="related">
+											<option>관련 사이트</option>
+											<option>공정거래위원회</option>
+											<option>한국소비자원</option>
+											<option>한국여행협회</option>
+											<option>한국관광공사</option>			
+										</select>
+									</div>
+								</div>		
+							</div>
+						</div>	
+					</div>
 				</div>						
 			</footer>			
 		</div>		

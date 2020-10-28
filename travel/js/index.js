@@ -35,6 +35,7 @@ $(function() {
 		};
 	});			
 	
+
 	
 	
 	hoverBox();
@@ -57,22 +58,28 @@ $(function() {
 			console.log($(window).scrollTop());
 			// if($(window).scrollTop() + $(window).height() == $(document).height()) { alert("bottom!"); } //바닥확인
 
+			showContents();
+
 			/*side nav*/			
 			if ($(window).scrollTop() >= 800) {
-					$("#to-top").slideDown(600);
+					$("#to-top").stop().animate({
+						bottom: '0'
+					},800,'easeInOutQuint');
 			} else {		
-				$("#to-top").slideUp(600);					
+				$("#to-top").stop().animate({
+						bottom: '-55px'
+					},800,'easeInOutQuint');			
 			};
 
 			/*bottom nav*/			
 			if ($(window).scrollTop() < 900) {
 					$("#bottom-nav-wrap").stop().animate({			
-						bottom: '-400px',						
+						bottom: '-460px',						
 					},300,'easeOutElastic');	
 				} 
 				else if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 4040) {		
 					$("#bottom-nav-wrap").stop().animate({				
-						bottom: '-300px'						
+						bottom: '-360px'						
 					},300,'easeOutElastic');						
 				};
 				if($(window).scrollTop() + $(window).height() != $(document).height()) {	
@@ -118,6 +125,26 @@ $(function() {
 	  },
 	})
 
+	var mySwiper = new Swiper('#count-img-wrap.swiper-container', {
+	  // Optional parameters
+	  direction: 'vertical',
+	  loop: true,
+	  // If we need pagination
+	  pagination: {
+	    el: '#count-img-wrap .swiper-pagination',
+	  },
+
+	  // Navigation arrows
+	  navigation: {
+	    nextEl: '#count-img-wrap .swiper-button-next',
+	    prevEl: '#count-img-wrap .swiper-button-prev',
+	  },
+	  // And if we need scrollbar
+	  scrollbar: {
+	    el: '#count-img-wrap .swiper-scrollbar',
+	  },
+	})
+
  }); //window로드끝
 
 
@@ -158,19 +185,17 @@ function nav() {
 	});
 };
 
-function showTitle() {
-	if ($(window).scrollTop() >= 900) {			
-		$("#page-1 .title-area>span").each(function(i) {		    
-			$(this).stop().animate({				
-				height: '60px'
-			}, 100 * (i + 0.1),'easeInQuart');
-		});		
+function showContents() {
+	if ($(window).scrollTop() >= 800) {			    
+		$("#intro-box-wrap").stop().animate({				
+			 opacity: '1'
+		}, 600);		
 		setTimeout(function() {
-			$("#page-1 .title-area>span>p").each(function(i) {		
+			$("#intro-box-wrap .intro-box").each(function(i) {		
 				$(this).stop().animate({						
 					opacity: '1',
 					top: '0'
-				}, 100 * (i + 0.1),'easeOutElastic');							
+				}, 800 * (i + 0.1));							
 			});				
 		},800); clearTimeout();		
 	};
