@@ -1,15 +1,19 @@
-$(function() {
+$(function() {	
 
-	// $("#preloader").delay(200).slideUp(800);	
+	$("#loading-logo").center();
+	window.onbeforeunload = function () {
+	  window.scrollTo(0, 0);
+	}
 	loading();
 	resize();	
 	// scrollUpDown();	
 	nav();
 	hoverMenu();
 	window.onresize = function() {
-		resize();		
-	};	
+		resize();				
+	};
 
+	/*burger nav*/
 	$("#burger-wrap").click(function(){		
 		$("#top-nav-wrap").animate({
 			top: '0'
@@ -25,125 +29,105 @@ $(function() {
 			bottom: '0'
 		},600,'easeOutElastic');
 	});
-	/*bottom active*/
-	
+
+	/*bottom active*/	
 	$("#bottom-bar").mouseleave(function(){
 		if($(window).scrollTop() + $(window).height() != $(document).height()) {
 			$("#bottom-nav-wrap").animate({
 				bottom: '-300px'
 			},600,'easeOutElastic');
 		};
-	});			
-	
-
-	
-	
-	hoverBox();
-	showNews();	
+	});	
 	setTimeout(function() {
-		/*count*/
-			var f = true;
-			if ($(window).scrollTop() >= 2500 ) {	
-				if(f == true) {		
-					var countValue = document.querySelectorAll(".countValue");		
-					var random = getRandom();	
-					for(var i  = 0; i < countValue.length; i++) {
-						counter(countValue[i], 0, random[i], 1000);
-					}; 					
-				}; f = false;
-			};
-
 		/*scroll*/
 		$(window).scroll(function(e) {           
 			console.log($(window).scrollTop());
-			// if($(window).scrollTop() + $(window).height() == $(document).height()) { alert("bottom!"); } //바닥확인
+			// if($(window).scrollTop() + $(window).height() == $(document).height()) { alert("bottom!"); } //바닥확인		
 
-			showContents();
+			showContents();			
 
 			/*side nav*/			
 			if ($(window).scrollTop() >= 800) {
 					$("#to-top").stop().animate({
 						bottom: '0'
-					},800,'easeInOutQuint');
+					},800,'easeInQuad');
 			} else {		
 				$("#to-top").stop().animate({
 						bottom: '-55px'
-					},800,'easeInOutQuint');			
+					},800,'easeInQuad');			
 			};
 
 			/*bottom nav*/			
 			if ($(window).scrollTop() < 900) {
-					$("#bottom-nav-wrap").stop().animate({			
-						bottom: '-460px',						
-					},300,'easeOutElastic');	
-				} 
-				else if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 4040) {		
-					$("#bottom-nav-wrap").stop().animate({				
-						bottom: '-360px'						
-					},300,'easeOutElastic');						
-				};
-				if($(window).scrollTop() + $(window).height() != $(document).height()) {	
-					$("#bottom-nav-wrap").css({				
-						position: 'fixed'			
-					});											
-				} else {	
-					$("#bottom-nav-wrap").stop().animate({				
-						bottom: '0'						
-					},300,'easeOutElastic');							
-					setTimeout(function() {	
-						$("#bottom-nav-wrap").css({					
-							position: 'absolute'			
-						});	
-					},300);									
-				};            
-			});			
-		
+				$("#bottom-nav-wrap").stop().animate({			
+					bottom: '-460px',						
+				},300,'easeInQuad');	
+			} 
+			else if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 4040) {		
+				$("#bottom-nav-wrap").stop().animate({				
+					bottom: '-360px'						
+				},300,'easeInQuad');						
+			};
+			if($(window).scrollTop() + $(window).height() != $(document).height()) {	
+				$("#bottom-nav-wrap").css({				
+					position: 'fixed'			
+				});											
+			} else {	
+				$("#bottom-nav-wrap").stop().animate({				
+					bottom: '0'						
+				},300,'easeInQuad');							
+				setTimeout(function() {	
+					$("#bottom-nav-wrap").css({					
+						position: 'absolute'			
+					});	
+				},300);									
+			}; 							        
+		});			
 	},4000); 
- 
- 	goto();
-
- 	
-
+	/*vTicker*/
+ 	$(function() {
+		$('#notice').vTicker();
+	});	
+	
 	/*swiper*/
-	var mySwiper = new Swiper('.swiper-container', {
-	  // Optional parameters
+	var eventSwiper = new Swiper('#event-swiper', {
 	  direction: 'vertical',
-	  loop: true,
-	  // If we need pagination
+	  loop: true,	  
 	  pagination: {
-	    el: '.swiper-pagination',
-	  },
-
-	  // Navigation arrows
+	    el: '#event-swiper-pagination',
+	  },	 
 	  navigation: {
-	    nextEl: '.swiper-button-next',
-	    prevEl: '.swiper-button-prev',
-	  },
-	  // And if we need scrollbar
-	  scrollbar: {
-	    el: '.swiper-scrollbar',
-	  },
+	    nextEl: '#event-swiper-next',
+	    prevEl: '#event-swiper-prev',
+	  }	  
 	})
 
-	var mySwiper = new Swiper('#count-img-wrap.swiper-container', {
-	  // Optional parameters
+	var hotelSwiper = new Swiper('#hotel-swiper', {	  
 	  direction: 'vertical',
-	  loop: true,
-	  // If we need pagination
+	  loop: true,	  
 	  pagination: {
-	    el: '#count-img-wrap .swiper-pagination',
-	  },
-
-	  // Navigation arrows
+	    el: '#hotel-swiper-pagination',
+	  },	 
 	  navigation: {
-	    nextEl: '#count-img-wrap .swiper-button-next',
-	    prevEl: '#count-img-wrap .swiper-button-prev',
-	  },
-	  // And if we need scrollbar
-	  scrollbar: {
-	    el: '#count-img-wrap .swiper-scrollbar',
-	  },
+	    nextEl: '#hotel-swiper-next',
+	    prevEl: '#hotel-swiper-prev',
+	  }
 	})
+
+	var countSwiper = new Swiper('#count-swiper', {	  
+	  direction: 'vertical',
+	  loop: true,	  
+	  pagination: {
+	    el: '#count-swiper-pagination',
+	  },	 
+	  navigation: {
+	    nextEl: '#count-swiper-next',
+	    prevEl: '#count-swiper-prev',
+	  }
+	})
+
+	goto();	
+	hoverBox();
 
  }); //window로드끝
 
@@ -152,33 +136,19 @@ function goto(target) {
 	$("html, body, #main").animate({
 			scrollTop: $(target).offset().top
 		},1000);
-
 };
+
 function resize() {
 	var wrapDiv = document.querySelectorAll("#main-title");	
 	wrapDiv.forEach(function(el){		
 		el.style.height = window.innerHeight + "px";	
 	});	
 };
+
 function nav() {
 	$("#to-top").click(function(){
 		goto("#top");
 		console.log(goto())
-	});
-	$("#1").click(function(){
-		goto("#main-title");
-	});
-	$("#2").click(function(){
-		goto("#page-1");
-	});
-	$("#3").click(function(){
-		goto("#page-2");
-	});
-	$("#4").click(function(){
-		goto("#page-3");
-	});
-	$("#5").click(function(){
-		goto("#page-4");
 	});
 	$("#scroll").click(function(){
 		goto("#page-1");
@@ -187,77 +157,66 @@ function nav() {
 
 function showContents() {
 	if ($(window).scrollTop() >= 800) {			    
-		$("#intro-box-wrap").stop().animate({				
+		$("#intro-box-wrap").animate({				
 			 opacity: '1'
 		}, 600);		
-		setTimeout(function() {
-			$("#intro-box-wrap .intro-box").each(function(i) {		
-				$(this).stop().animate({						
-					opacity: '1',
-					top: '0'
-				}, 800 * (i + 0.1));							
-			});				
-		},800); clearTimeout();		
-	};
-	if ($(window).scrollTop() >= 1900) {		
-		$("#page-2 .title-area>span").each(function(i) {		    
-			$(this).stop().animate({				
-				height: '60px'
-			}, 100 * (i + 0.1),'easeInQuart');
+		$("#intro-box-wrap .intro-box").each(function(i) {		
+			$(this).delay(600).animate({						
+				opacity: '1',
+				top: '0'
+			}, 800 * (i + 0.1));							
 		});
-		setTimeout(function() {
-			$("#page-2 .title-area>span>p").each(function(i) {		
-				$(this).stop().animate({	
-					opacity: '1',
-					top: '0'
-				}, 100 * (i + 0.1),'easeOutElastic');					
-			});	
-		},800); clearTimeout();	
+		$("#page-2").delay(900).animate({				
+			 	opacity: '1',
+				top: '0'
+		}, 600);					
+	
 	};
-	if ($(window).scrollTop() >= 3000) {	
-		$("#page-3 .title-area>span").each(function(i) {		    
-			$(this).stop().animate({				
-				height: '60px'
-			}, 100 * (i + 0.1),'easeInQuart');
-		});
-		setTimeout(function() {
-			$("#page-3 .title-area>span>p").each(function(i) {		
-				$(this).stop().animate({	
-					opacity: '1',
-					top: '0'
-				}, 100 * (i + 0.1),'easeOutElastic');					
-			});	
-		},800); clearTimeout();	
+	if ($(window).scrollTop() >= 1400) {
+		$("#page-3").animate({				
+		 	opacity: '1',
+			top: '0'
+		}, 800);		
 	};
-	if ($(window).scrollTop() >= 4000) {		
-		$("#food-text-wrap>span").stop().animate({
-			 height: '65px'
-		},800,'easeInOutBack');		
-		setTimeout(function() {
-			$("#food-text-wrap h1").stop().animate({
-			 opacity: '1'
-		},100);
-			$("#food-text-wrap>span").stop().animate({
-				 height: '0',
-				 top:'0'
-			},800,'easeInOutBack');					
-		},900); clearTimeout();
+	if ($(window).scrollTop() >= 2300) {	
+		$("#page-4").animate({				
+		 	opacity: '1',
+			top: '0'
+		}, 800);	
 	};
+	if ($(window).scrollTop() >= 2700) {
+		$("#page-5").animate({				
+			 	opacity: '1',
+				top: '0'
+		}, 800);
+		/*count*/	
+		setTimeout(function() {		
+			var countValue = document.querySelectorAll(".countValue");		
+			var random = getRandom();										
+			for(var i  = 0; i < countValue.length; i++) {
+				counter(countValue[i], 0, random[i], 1000);
+			}; 	
+		},800); clearInterval()	;						
+	};
+	if ($(window).scrollTop() >= 3100) {
+		$("#page-6").animate({				
+			 	opacity: '1',
+				top: '0'
+		}, 800);		
+	};
+	if ($(window).scrollTop() >= 3900) {
+		$("#page-7").animate({				
+			 	opacity: '1',
+				top: '0'
+		}, 800);		
+		$("#page-8").animate({				
+			 	opacity: '1',
+				top: '0'
+		}, 800);		
+	};	//스위치로 바꾸기..	
+
 };
 
-function showNews() {
-	if ($(window).scrollTop() >= 4000) {
-		setTimeout(function() {
-			$(".news").each(function(i) {		    
-			$(this).stop().animate({				
-				top: '0',
-				opacity: '1'
-			}, 600 * (i + 0.1),'easeInQuart');
-		});
-		},1800); clearTimeout();
-	};
-};
- 
 function scrollUpDown() { //스크롤업다운체크용
 	var oldScroll = 0;
 	$(window).scroll(function(){		
@@ -276,6 +235,7 @@ function scrollUpDown() { //스크롤업다운체크용
 		oldScroll = nowScroll <= 0 ? 0 : nowScroll;
 	});
 };
+
 function hoverMenu() {
 	var timer = [];
 	$("#burger-wrap").each(function(i) {
@@ -318,36 +278,51 @@ function hoverMenu() {
 		});
 	});				
 };
+
+jQuery.fn.center = function () {
+	this.css("position","absolute");
+	this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+	$(window).scrollTop()) + "px");
+	this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+	$(window).scrollLeft()) + "px");
+	return this;
+}
+
 function loading() {
 	$("#loading").each(function(){
-		$(this).delay(500).css({
-			backgroundColor: '#009bdf'
-		});
+		setTimeout(function() {		
+			$("#loading").css({
+				backgroundColor: '#009bdf'
+			});
+		},500); 
 	});
 	$("#loading-wave").delay(500).animate({
 		opacity: '0'
-	});
+	});  //#load되면 사라질 것
 	setTimeout(function() {
-		$("#loading").animate({
-			opacity: '0.5',
+		$("#loading-logo>span:nth-child(1)").delay(300).animate({
+			  top: '0'
+		},600,'easeInOutBack');
+		$("#loading-logo>span:nth-child(2)").delay(900).animate({
+			  top: '0'
+		},600,'easeInOutBack');	
+		$("#loading").delay(1000).animate({
+			opacity: '0.5',			
+		},600,'easeInCubic');	
+		$("#loading").delay(800).animate({		
 			height: '0'
-		},800,'easeInOutBack');		
-	},800);
-	setTimeout(function() {				
-		$("#title>span").each(function(i) {		 
-			$(this).stop().animate({
-				top: '0',
-				opacity: '1'
-			}, 100 * (i + 0.1),'easeInOutBack');
-		});
-	},1800); 
-	setTimeout(function() {		
-		$("#scroll").animate({
+		},800,'easeInCubic');	
+			$("header").delay(3800).animate({
+			opacity: '1',
+			 left: '0'			
+		},900,'easeInQuad');		
+		$("#scroll").delay(3100).animate({
 			opacity: '1',
 			bottom: '120px'
-		},1200,'easeInOutBack');	
-	},2800); 
+		},1200,'easeInOutBack');		
+	},600); 
 };	
+
 function hoverBox() {
 	var timer = [];
 	$(".popular-box").each(function(i) {
@@ -356,7 +331,7 @@ function hoverBox() {
 			(function(el) {
 				timer[i] = setTimeout(function() {
 					el.css({
-						backgroundColor: 'gray'
+					    boxShadow: '0px 0px 300px rgba(0,0,0,0.5) inset'
 					});
 					el.find(".pin").stop().animate({
 						right: '10px'
@@ -369,7 +344,7 @@ function hoverBox() {
 			})($(this));
 		}, function() {	
 		$(".popular-box").css({
-			backgroundColor: '#f2f2f2'
+			boxShadow: '0px 0px 300px rgba(0,0,0,0) inset'
 		});
 		$(".pin").stop().animate({	
 			right: '-75px'					
@@ -382,20 +357,21 @@ function hoverBox() {
 		});
 	});				
 };
+
 function counter(el ,start, end, duration) {
-		var finish = 0;
-		var increment = end > start ? 1 : -1;
-		var rang = end - start;
-		var step  = Math.abs(Math.floor(duration/rang)); //end까지의 간격(속도)를 동일하게 계산
-		var timer = setInterval(function(){
-			el.innerHTML = start;
-			if(start == end) {
-				clearInterval(timer);
-				finish++;				
-			}
-			start += increment;
-		}, step)
-	}
+	var finish = 0;
+	var increment = end > start ? 1 : -1;
+	var rang = end - start;
+	var step  = Math.abs(Math.floor(duration/rang)); //end까지의 간격(속도)를 동일하게 계산
+	var timer = setInterval(function(){
+		el.innerHTML = start;
+		if(start == end) {
+			clearInterval(timer);
+			finish++;				
+		}
+		start += increment;
+	}, step)
+};
 
 function getRandom() {
 	var max = 4; 
@@ -403,7 +379,7 @@ function getRandom() {
 	var counter = 0;
 	var flag = true; 
 	while (counter < max) {
-		var num = Math.floor(Math.random()*1000) + 1
+		var num = Math.floor(Math.random()*999) + 1
 		for(var i = 0; i < counter; i++) { 
 			if ((random[i]) == num) { 
 				flag = false;
