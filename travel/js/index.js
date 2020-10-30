@@ -34,7 +34,7 @@ $(function() {
 	$("#bottom-bar").mouseleave(function(){
 		if($(window).scrollTop() + $(window).height() != $(document).height()) {
 			$("#bottom-nav-wrap").animate({
-				bottom: '-300px'
+				bottom: '-360px'
 			},600,'easeOutElastic');
 		};
 	});	
@@ -44,26 +44,29 @@ $(function() {
 			console.log($(window).scrollTop());
 			// if($(window).scrollTop() + $(window).height() == $(document).height()) { alert("bottom!"); } //바닥확인		
 
-			showContents();			
+			// showContents();	
+			hoverBox();		
 
 			/*side nav*/			
 			if ($(window).scrollTop() >= 800) {
-					$("#to-top").stop().animate({
-						bottom: '0'
+					$("nav").stop().animate({
+						bottom: '490px',
+						opacity: '1'
 					},800,'easeInQuad');
 			} else {		
-				$("#to-top").stop().animate({
-						bottom: '-55px'
-					},800,'easeInQuad');			
+				$("nav").stop().animate({
+						bottom: '480px',
+						opacity: '0'
+				},800,'easeInQuad');			
 			};
-
 			/*bottom nav*/			
-			if ($(window).scrollTop() < 900) {
-				$("#bottom-nav-wrap").stop().animate({			
-					bottom: '-460px',						
-				},300,'easeInQuad');	
-			} 
-			else if ($(window).scrollTop() >= 900 && $(window).scrollTop() < 4040) {		
+			// if ($(window).scrollTop() < 900) {
+			// 	$("#bottom-nav-wrap").stop().animate({			
+			// 		bottom: '-460px',						
+			// 	},300,'easeInQuad');	
+			// } 
+			// else
+			if ($(window).scrollTop() < 4040) {		
 				$("#bottom-nav-wrap").stop().animate({				
 					bottom: '-360px'						
 				},300,'easeInQuad');						
@@ -88,10 +91,11 @@ $(function() {
  	$(function() {
 		$('#notice').vTicker();
 	});	
+  AOS.init();
 	
 	/*swiper*/
 	var eventSwiper = new Swiper('#event-swiper', {
-	  direction: 'vertical',
+	  direction: 'horizontal',
 	  loop: true,	  
 	  pagination: {
 	    el: '#event-swiper-pagination',
@@ -103,31 +107,43 @@ $(function() {
 	})
 
 	var hotelSwiper = new Swiper('#hotel-swiper', {	  
-	  direction: 'vertical',
-	  loop: true,	  
-	  pagination: {
-	    el: '#hotel-swiper-pagination',
-	  },	 
+	  direction: 'horizontal',
+	  loop: true,	 
 	  navigation: {
 	    nextEl: '#hotel-swiper-next',
 	    prevEl: '#hotel-swiper-prev',
-	  }
+	  },
+	  	breakpoints: { 
+			600: { 
+	          slidesPerView: 2,
+	          spaceBetween: 20,
+	        }	        
+	    }
 	})
 
-	var countSwiper = new Swiper('#count-swiper', {	  
-	  direction: 'vertical',
-	  loop: true,	  
-	  pagination: {
-	    el: '#count-swiper-pagination',
-	  },	 
+	var reviewSwiperPic = new Swiper('#review-swiper', {	  
+	  direction: 'horizontal',
+	  loop: true,			  
+	})
+	var reviewSwiperTxt = new Swiper('#review-swiper', {	  
+	  direction: 'horizontal',
+	  loop: true,	 
 	  navigation: {
-	    nextEl: '#count-swiper-next',
-	    prevEl: '#count-swiper-prev',
+	    nextEl: '#review-swiper-next',
+	    prevEl: '#review-swiper-prev',
 	  }
 	})
+	  var next = document.querySelector("#review-swiper-next");
+	  next.onclick = function() {
+	    reviewSwiperPic.slideNext(1000);
+	  }
+	  var prev = document.querySelector("#review-swiper-prev");
+	  prev.onclick = function() {
+	    reviewSwiperPic.slidePrev(1000);
+	  }
 
 	goto();	
-	hoverBox();
+	
 
  }); //window로드끝
 
@@ -161,12 +177,12 @@ function showContents() {
 			 opacity: '1'
 		}, 600);		
 		$("#intro-box-wrap .intro-box").each(function(i) {		
-			$(this).delay(600).animate({						
+			$(this).animate({						
 				opacity: '1',
 				top: '0'
-			}, 800 * (i + 0.1));							
+			}, 800 * (i + 0.05));							
 		});
-		$("#page-2").delay(900).animate({				
+		$("#page-2").animate({				
 			 	opacity: '1',
 				top: '0'
 		}, 600);					
@@ -188,16 +204,9 @@ function showContents() {
 		$("#page-5").animate({				
 			 	opacity: '1',
 				top: '0'
-		}, 800);
-		/*count*/	
-		setTimeout(function() {		
-			var countValue = document.querySelectorAll(".countValue");		
-			var random = getRandom();										
-			for(var i  = 0; i < countValue.length; i++) {
-				counter(countValue[i], 0, random[i], 1000);
-			}; 	
-		},800); clearInterval()	;						
+		}, 800);					
 	};
+
 	if ($(window).scrollTop() >= 3100) {
 		$("#page-6").animate({				
 			 	opacity: '1',
@@ -213,7 +222,7 @@ function showContents() {
 			 	opacity: '1',
 				top: '0'
 		}, 800);		
-	};	//스위치로 바꾸기..	
+	};	//스위치문으로로 바꾸기..	
 
 };
 
@@ -298,30 +307,45 @@ function loading() {
 	});
 	$("#loading-wave").delay(500).animate({
 		opacity: '0'
-	});  //#load되면 사라질 것
-	setTimeout(function() {
+	});  //#load되면 사라질 것 
+	setTimeout(function() { 
 		$("#loading-logo>span:nth-child(1)").delay(300).animate({
 			  top: '0'
 		},600,'easeInOutBack');
 		$("#loading-logo>span:nth-child(2)").delay(900).animate({
 			  top: '0'
 		},600,'easeInOutBack');	
-		$("#loading").delay(1000).animate({
+		$("#loading").delay(1000).animate({ 
 			opacity: '0.5',			
-		},600,'easeInCubic');	
-		$("#loading").delay(800).animate({		
+		},600,'easeInCubic'); 
+		$("#loading").delay(900).animate({		
 			height: '0'
-		},800,'easeInCubic');	
-			$("header").delay(3800).animate({
-			opacity: '1',
+		},800,'easeInCubic');
+		setTimeout(function() {
+			$("#bottom-nav-wrap").animate({
+				right: '0'			
+			},700,'easeInQuad');	
+			$("#logo-area").animate({			
+				 left: '0'			
+			},700,'easeInQuad');				
+		},3800);
+		$("#nav-button").delay(4500).animate({			
+			 left: '90px'			
+		},1500,'easeInQuad');
+		$("#plan").delay(4200).animate({			
 			 left: '0'			
-		},900,'easeInQuad');		
+		},900,'easeInQuad');			
 		$("#scroll").delay(3100).animate({
 			opacity: '1',
 			bottom: '120px'
 		},1200,'easeInOutBack');		
 	},600); 
-};	
+	setTimeout(function(){
+		$("body").css({
+			overflowY: 'scroll'
+		});
+	},5800);
+}; 
 
 function hoverBox() {
 	var timer = [];
@@ -352,50 +376,40 @@ function hoverBox() {
 		$(".info").stop().animate({	
 			bottom: '-75px',
 			left: '-55px'					
+		}, 300,'');
+		clearTimeout(timer[i]);
+		});
+	});
+
+	$(".swiper-container").each(function(i) {
+		timer[i] = null;
+		$(this).hover(function() {
+			(function(el) {
+				timer[i] = setTimeout(function() {					
+					el.find(".my-swiper-prev").stop().animate({
+						opacity: '1'
+						},300, 'easeOutQuart');
+					el.find(".my-swiper-next").stop().animate({
+						opacity: '1'
+					},300, 'easeOutQuart');										
+				}, 300);					
+			})($(this));
+		}, function() {		
+		$(".my-swiper-prev").stop().animate({	
+			opacity: '0'			
+		}, 300,'easeOutQuart');
+		$(".my-swiper-next").stop().animate({	
+			opacity: '0'				
 		}, 300,'easeOutQuart');
 		clearTimeout(timer[i]);
 		});
 	});				
 };
-
-function counter(el ,start, end, duration) {
-	var finish = 0;
-	var increment = end > start ? 1 : -1;
-	var rang = end - start;
-	var step  = Math.abs(Math.floor(duration/rang)); //end까지의 간격(속도)를 동일하게 계산
-	var timer = setInterval(function(){
-		el.innerHTML = start;
-		if(start == end) {
-			clearInterval(timer);
-			finish++;				
-		}
-		start += increment;
-	}, step)
-};
-
-function getRandom() {
-	var max = 4; 
-	var random = new Array(max); 
-	var counter = 0;
-	var flag = true; 
-	while (counter < max) {
-		var num = Math.floor(Math.random()*999) + 1
-		for(var i = 0; i < counter; i++) { 
-			if ((random[i]) == num) { 
-				flag = false;
-			}
-		}
-		if(flag) { 
-			random[counter] = num;
-			counter++;		
-		}
-		flag = true; 
-	}	
-	return random;
-};
-
-
-
-	
-
-
+AOS.init({ 
+  offset: 200, 
+  delay: 0,
+  duration: 1000, 
+  easing: 'ease-in-out', 
+  once: true, 
+  mirror: false,
+});
