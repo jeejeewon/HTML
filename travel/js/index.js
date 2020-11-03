@@ -107,7 +107,7 @@ $(function() {
 	  navigation: {
 	    nextEl: '#event-swiper-next',
 	    prevEl: '#event-swiper-prev',
-	  }	  
+	  }
 	})
 	var hotelSwiper = new Swiper('#hotel-swiper', {	  
 	  direction: 'horizontal',
@@ -138,10 +138,14 @@ $(function() {
 	    prevEl: '#review-swiper-prev',
 	  }
 	});
+	try {
+		reviewSwiperTxt.on('slideChangeTransitionEnd', function(el) {
+			reviewSwiperPic.slideTo(el.activeIndex);
+		});
+	} catch(e) {
 
-	reviewSwiperTxt.on('slideChangeTransitionEnd', function(el) {
-		reviewSwiperPic.slideTo(el.activeIndex);
-	});
+	}
+		
 
 
 
@@ -157,7 +161,17 @@ function goto(target) {
 function resize() {
 	var wrapDiv = document.querySelectorAll("#main-title");	
 	wrapDiv.forEach(function(el){		
-		el.style.height = window.innerHeight + "px";	
+		el.style.height = window.innerHeight + "px";
+	});		
+	var video = document.querySelectorAll("video");	
+	video.forEach(function(el) {		
+		if (window.innerHeight > window.innerWidth) {
+			el.style.height = 150 +"%";	
+			el.style.width = "auto";	
+		} else {
+			el.style.height = "auto" ;	
+			el.style.width =  180 +"%";	
+		};		
 	});	
 };
 
@@ -232,18 +246,25 @@ function loading() {
 			  top: '0'
 		},600,'easeInOutBack');	
 		$("#loading").delay(1000).animate({ 
-			opacity: '0.5',			
+			opacity: '0.6',			
 		},600,'easeInCubic'); 
 		$("#loading").delay(900).animate({		
 			height: '0'
 		},800,'easeInCubic');
 		setTimeout(function() {
+			$("video").trigger("play");			
 			$("#bottom-nav-wrap").animate({
 				right: '0'			
 			},700,'easeInQuad');	
 			$("#logo-area").animate({			
 				 left: '0'			
-			},700,'easeInQuad');				
+			},700,'easeInQuad');	
+			$("#title>span").each(function(i) {
+				$(this).stop().animate({
+					top: '0',
+					opacity: '1'
+				}, 800 * (i + 0.1),'easeOutElastic');
+			});			
 		},3800);
 		$("#nav-button").delay(4500).animate({			
 			 left: '90px'			
