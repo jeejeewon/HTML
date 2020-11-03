@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<title>TOUR</title>
+	<title>GOTravel</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="./icon/.ico">
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 	<link rel="stylesheet" href="./css/swiper-bundle.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/aos.css">
-	<link rel="shortcut icon" href="./icon/.ico">
+	<link rel="stylesheet" type="text/css" href="./css/aos.css">	
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
-	<!-- <link rel="stylesheet" type="text/css" href="./css/swiper-img.css"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
-	<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+	<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>	
 	<script type="text/javascript" src="./js/vticker.min.js"></script>
-	<script type="text/javascript" src="./js/ripples.js"></script>
 	<script type="text/javascript" src="./js/aos.js"></script>
 	<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="./js/index.js"></script>
@@ -25,8 +23,7 @@
 		<div id="loading">
 			<div id="loading-wave" class="loading-wave">
 			    <div class="sp sp-wave"></div>		          
-		    </div>
-		    <!-- <div id="test"></div> -->
+		    </div>		   
 		    <div id="loading-logo">			
 		    	<span>G</span>		  
 		    	<span>O</span>		         	     	
@@ -97,15 +94,18 @@
 			<section id="main-title" class="clear-both contents-wrap">
 				<div class="float-left">
 					<div class="contents float-left">
-						<div id="title">			
-							<span>Experience the best trip ever</span>									
+						<div id="title" data-aos="fade-up">			
+							<span></span>	
 						</div>					
 						<div id="scroll">discovery</div>		
 					</div>					
 				</div>
 				<div id="seach">		
 				</div>	
-				<div id="line"></div>				
+				<div id="line">
+					<span>+NEWS</span>
+					<span></span>					
+				</div>				
 			</section>
 			<section id="page-1" class="contents-wrap">
 				<div class="contents">					
@@ -113,7 +113,7 @@
 						<h2>GOTravel에서 여행을 시작하세요!</h2>					
 						<div class="intro-box" data-aos="fade-up">
 							<div class="icon">
-								<i>i</i>								
+								<i>i</i>		
 							</div>
 							<h4>여행정보</h4>
 							<p>전국의 관광명소, 음식점, 쇼핑<br/> 정보를 확인하세요.</p>
@@ -147,10 +147,10 @@
 											<h1>국내 여행 완전정복</h1>
 											<p>꼭 맞는 여행지, 숙소, 액티비티 총 집합! <br/>
 											지역을 돕고, 일상에 감동과 위로를 줄 여행을 떠나보세요.
-											</p>								
+											</p>				
 										</div>	
 										<div class="evnet-button-area float-right ">
-											<button>자세히 보기
+											<button id="event-btn"><span>자세히 보기</span>
 											</button>		
 										</div>						        		
 						        	</div>								
@@ -161,10 +161,10 @@
 											<h1>국내 여행 완전정복</h1>
 											<p>꼭 맞는 여행지, 숙소, 액티비티 총 집합! <br/>
 											지역을 돕고, 일상에 감동과 위로를 줄 여행을 떠나보세요.
-											</p>								
+											</p>				
 										</div>	
 										<div class="evnet-button-area float-right ">
-											<button>자세히 보기
+											<button id="event-btn"><span>자세히 보기</span>
 											</button>		
 										</div>				
 						        	</div>
@@ -178,7 +178,7 @@
 											</p>								
 										</div>	
 										<div class="evnet-button-area float-right ">
-											<button>자세히 보기
+											<button id="event-btn"><span>자세히 보기</span>
 											</button>		
 										</div>				
 						        	</div>
@@ -206,8 +206,8 @@
 							</div>
 							<div class="info">
 								<span>#BEST패키지 #강릉항셔틀포함</span>
-								<h2>BEST 울릉도 패키지 3일</h2>								
-								<p>319,000원~</p>								
+								<h2>BEST 울릉도 패키지 3일</h2>	
+								<p>319,000원~</p>				
 							</div>
 						</div>
 						<div id="popular-img-2" class="popular-box">
@@ -251,11 +251,8 @@
 							</div>						
 						</div>				
 					</div>		
-					<div class="more">
-						<button>인기 상품 더 보기
-							<img src="./img/arrow.png">
-						</button>
-					</div>			
+					<button class="main-btn">인기 상품 더 보기</button>
+						
 				</div>			
 			</section>
 			<section id="page-4" class="contents-wrap" data-aos="fade-left" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">		
@@ -265,7 +262,9 @@
 							<h1>힐링여행<br/>베스트 호캉스</h1>
 							<span class="line-h-40">#가을 #선착순</span>
 							<p>멀리 떠나지 않고 도심에서 휴가를 즐길 수 있으며, <br/>아름다운 야경을 자랑하는 루프탑에서 바베큐와 무제한 생맥주와 와인을 즐겨 보세요.</p>
-							<button>자세히 보기<img src="./img/arrow.png"></button>	
+							<div id="hotel-button-area">
+								<button class="main-btn">자세히 보기</button>
+							</div>							
 						</div>
 						<div id="hotel-slide-area" class="float-right">
 							<div id="hotel-swiper" class="swiper-container">	   
@@ -275,11 +274,14 @@
 							        		<div id="hotel-img-1" class="hotel-thumb float-left"></div>
 							        		<div class="hotel-info clear-both float-left">
 							        			<h3>롯데 리조트 속초</h3>
-							        			<span id="rating"></span>
-							        			<p>선착순 스위트룸 업데이트</p>
+							        			<span class="rating">
+							        				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							        			</span>
+							        			<p>선착순 스위트룸 업데이트
+							        				<span class="price">168,945<span>원~</span></span></p>	        			
 							        			<span>
 							        				<p class="float-left">
-							        				<span class="lnr lnr-map"></span>위치</p>
+							        				<span class="lnr lnr-map"></span>외옹치 해수욕장 부근</p>
 							        				<button class="float-right">예약하기</button>
 							        			</span>
 							        		</div>
@@ -290,11 +292,15 @@
 							        		<div id="hotel-img-2" class="hotel-thumb float-left"></div>
 							        		<div class="hotel-info clear-both float-left">
 							        			<h3>여수 유탑마리나 호텔</h3>
-							        			<span id="rating"></span>
-							        			<p>레일텔 자유여행 2일 KTX왕복</p>
+							        			<span class="rating">
+							        				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							        			</span>						    
+							        			<p>레일텔 자유여행 2일 KTX왕복
+							        			<span class="price">153,000<span>원~</span></span>
+								        		</p>			        			
 						        				<span>
 							        				<p class="float-left">
-							        				<span class="lnr lnr-map"></span>위치</p>
+							        				<span class="lnr lnr-map"></span>여수시</p>
 							        				<button class="float-right">예약하기</button>
 							        			</span>
 							        		</div>
@@ -305,11 +311,15 @@
 							        		<div id="hotel-img-3" class="hotel-thumb float-left"></div>
 							        		<div class="hotel-info clear-both float-left">
 							        			<h3>서귀포 KAL 호텔</h3>
-							        			<span id="rating"></span>
-							        			<p>2인 1회 조식무료</p>
+							        			<span class="rating">
+							        				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							        			</span>						    
+							        			<p>2인 1회 조식무료
+							        			<span class="price">234,000<span>원~</span></span>
+								        		</p>			        			
 						        				<span>
 							        				<p class="float-left">
-							        				<span class="lnr lnr-map"></span>위치</p>
+							        				<span class="lnr lnr-map"></span>제주시</p>
 							        				<button class="float-right">예약하기</button>
 							        			</span>
 							        		</div>
@@ -320,11 +330,14 @@
 							        		<div id="hotel-img-4" class="hotel-thumb float-left"></div>
 							        		<div class="hotel-info clear-both float-left">
 							        			<h3>파크로쉬 리조트앤웰니스</h3>
-							        			<span id="rating"></span>
-							        			<p>조식 /  웰니스 / 아쿠아클럽 포함</p>
-								        		<span>
+							        			<span class="rating">
+							        				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							        			</span>		        			
+							        			<p>조식 /  웰니스 / 아쿠아클럽 포함
+							        			<span class="price">257,099<span>원~</span></span></p>
+							        			<span>
 							        				<p class="float-left">
-							        				<span class="lnr lnr-map"></span>위치</p>
+							        				<span class="lnr lnr-map"></span>정선 알파인 경기장 부근</p>
 							        				<button class="float-right">예약하기</button>
 							        			</span>
 							        		</div>
@@ -345,10 +358,14 @@
 							<div id="review-swiper" class="swiper-container">
 								<div class="swiper-wrapper">	
 									<div class="swiper-slide">
-										<div class="review-img"></div>
+										<div id="review-img-1" class="review-img"></div>
 									</div>		
-									<div class="swiper-slide">2</div>		
-									<div class="swiper-slide">3</div>
+									<div class="swiper-slide">
+										<div id="review-img-2" class="review-img"></div>
+									</div>		
+									<div class="swiper-slide">
+										<div id="review-img-3" class="review-img"></div>
+									</div>
 								</div>							   		 					
 							</div>							
 						</div>
@@ -361,16 +378,40 @@
 									<div class="swiper-wrapper">	
 										<div class="swiper-slide">
 											<div class="review-text">
-												<span>베스트리뷰</span>
-												<p>여름 휴가를 맞아 2박 3일로 제주도여행을 다녀왔습니다. 제주도 버스 패키지가 아쉽게도 관광호텔급이라 한단계 높은 신라스테이 제주로 변경하였습니다. 짧은 일정에 많은 장소를 돌아보는 버스 패키지는 아무래도 몸이 피곤하기 때문에 잘 자고 푹 쉬는 게 중요하다고 생각했어요. 신라스테이 제주는 4성 비즈니스 호텔입니다. 5성 신라호텔보다는 등급이 낮지만 객실 물품과 컨디션은 비슷한 것 같습니다.</p>
-												<span>자세히보기</span>
+												<span><img src="./img/quote.png" alt="quote"></span>
+												<div>
+													<h3>자유 여행만 즐기다 처음 경험한 패키지 여행 후기!!(with 박재현 인솔자님♡)</h3>
+													<span id="date">2020.7.31</span>
+													<p>여름 휴가를 맞아 2박 3일로 제주도여행을 다녀왔습니다. 제주도 버스 패키지가 아쉽게도 관광호텔급이라 한단계 높은 신라스테이 제주로 변경하였습니다. 짧은 일정에 많은 장소를 돌아보는 버스 패키지는 아무래도 몸이 피곤하기 때문에 잘 자고 푹 쉬는 게 중요하다고 생각했어요. 신라스테이 제주는 4성 비즈니스 호텔입니다. 5성 신라호텔보다는 등급이 낮지만 객실 물품과 컨디션은 비슷한 것 같습니다. 로비 중앙에 있는 테디베어 포토존 정말 예쁩니다. 방문하시게 되면 중앙에 있다고 쑥스러워 하지 마시고 Let's Take a photo!
+													사진은 평생 남습니다!</p>
+													<span><span>자세히보기</span><span class="lnr lnr-chevron-right"></span></span>
+												</div>									
 											</div>
 										</div>	
 										<div class=" swiper-slide">
-											<div class="review-text" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+											<div class="review-text">
+												<span><img src="./img/quote.png" alt="quote"></span>
+												<div>
+													<h3>말로만 듣던 아름다운 해금강 외도 연대도 통영을 다녀와서</h3>
+													<span id="date">2020.8.31</span>
+													<p>말로만 듣던 아름다운 해금강과 외도 * 통영 *연대도* 만지도 여행에 나선 우리 일행 모두는 설렘과 부푼마음으로 출발했는데 대전에서 우리를 기다리고 계신 이병덕가이드님과의 만남에서 모든 여정이 다 마쳐질때까지 우리 일행 모두는 아름다운 남해의섬 만큼이나 멋진 이병덕 가이드님을 보고 놀라지않을 수 없었습니다.
+													짧은 여행이 끝나면 각각 제집으로 돌아가고 나면 기억조차 없는 사람들일텐데 그럼에도 가슴속에 간직해야할 소중한 사람들을 대하듯 온 맘과 열정을 다하여 안내해 주신 이병덕 가이드선생님께 우리 일행 모두는 감탄하지 않을 수 없었습니다.</p>
+													<span><span>자세히보기</span><span class="lnr lnr-chevron-right"></span></span>
+												</div>									
+											</div>
 										</div>	
 										<div class="swiper-slide">
-											<div class="review-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+											<div class="review-text">
+												<span><img src="./img/quote.png" alt="quote"></span>
+												<div>
+													<h3>제주사랑</h3>
+													<span id="date">2020.9.25</span>
+													<p>제주도 2박3일 여행을 9월12일~14일 다녀왔습니다.
+													먼 나라를 여행할때와 다르게 이번 제주여행에서는 제주의 아름다움에 반할 뿐 아니라 제주를 사랑하게 되었습니다.
+													외로운 섬 생활의 지나온 이야기들을 들을 수가 있었고 전통마을에서는 그 곳분들이 생산하는 진귀한 말태반과 마유와 오미자청도 구입할 수 있어서 좋았습니다. 제주도의 마스코트와 같은 돌하르방에 대한 이야기와 왕발이남자와 냉발이여자에 대해서도 알 수 있었고 아름다운 제주를 가꾸고 지키는 그곳 제주분들의 노고를 응원하게 되었습니다.</p>
+													<span><span>자세히보기</span><span class="lnr lnr-chevron-right"></span></span>
+												</div>									
+											</div>
 										</div>
 									</div>				 	   					
 								</div>
@@ -387,10 +428,10 @@
 				<div class="contents">
 					<div id="news-wrap" class="clear-both">
 						<h1>NEWS & 이벤트</h1>
-						<p class="line-h-40">노랑TV만의 특별한 혜택, 지금 확인하세요!</p>
+						<p class="line-h-40">GOTravel만의 특별한 혜택, 지금 확인하세요!</p>
 						<div id="news-box-wrap">
 							<div class="news">
-								<div class="news-thumb"></div>
+								<div id="news-img-1" class="news-thumb"></div>
 								<div class="news-info">
 									<h3>제주 중문 면세점 Big Sale!</h3>
 									<p>제주 여행 하시나요?<br/>제주관광공사 면제점 특별 할인 쿠폰을 드립니다.<br/>국내 제주 상품 예약 고객 대상 회원, 비회원 모두 참여 가능한 이벤트입니다.</p>
@@ -398,17 +439,17 @@
 								</div>
 							</div>
 							<div class="news">
-								<div class="news-thumb"></div>
+								<div id="news-img-2" class="news-thumb"></div>
 								<div class="news-info">
 									<h3>여행기 이벤트</h3>
 									<p>노랑풍선과 함께 한 여러분들의 즐거웠던 추억을 공유해 보세요!<br/>
 									매월 최대 3분을 선정하여 여행 상품권을 드립니다.
 									</p>
-									<span>더 보기</span>							
+									<span>더 보기</span>						
 								</div>
 							</div>
 							<div class="news">
-								<div class="news-thumb"></div>
+								<div id="news-img-3" class="news-thumb"></div>
 								<div class="news-info">
 									<h3>여행용 캐리어 50% 할인!</h3>
 									<p>유니크한 이탈리아 트렁크 브랜드 크래쉬배기지 캐리어를 할인된 가격에 만나보세요.</p>
