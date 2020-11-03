@@ -13,6 +13,7 @@ $(function() {
 		BurgerNav();
 		$("#loading-logo").center();
 	};
+
 	BurgerNav();
 	hoverBox();	
 	
@@ -30,13 +31,12 @@ $(function() {
 			},600,'easeOutElastic');
 		};
 	});	
+
 	setTimeout(function() {
 		/*scroll*/
 		$(window).scroll(function(e) {           
 			console.log($(window).scrollTop());
-			// if($(window).scrollTop() + $(window).height() == $(document).height()) { alert("bottom!"); } //바닥확인		
-
-			// showContents();					
+			// if($(window).scrollTop() + $(window).height() == $(document).height()) { alert("bottom!"); } //바닥확인				
 
 			/*side nav*/			
 			if ($(window).scrollTop() >= 800) {
@@ -123,7 +123,6 @@ $(function() {
 	        }	        
 	    }
 	})
-
 	var reviewSwiperPic = new Swiper('#review-swiper', {	  
 	  direction: 'horizontal',
 	  loop: true,	
@@ -145,8 +144,6 @@ $(function() {
 	} catch(e) {
 
 	}
-		
-
 
 
 }); //window로드끝
@@ -237,7 +234,8 @@ function loading() {
 	});
 	$("#loading-wave").delay(500).animate({
 		opacity: '0'
-	});  //#load되면 사라질 것 
+	});  //load되면 사라질 것 
+
 	setTimeout(function() { 
 		$("#loading-logo>span:nth-child(1)").delay(300).animate({
 			  top: '0'
@@ -251,6 +249,7 @@ function loading() {
 		$("#loading").delay(900).animate({		
 			height: '0'
 		},800,'easeInCubic');
+
 		setTimeout(function() {
 			$("video").trigger("play");			
 			$("#bottom-nav-wrap").animate({
@@ -266,6 +265,7 @@ function loading() {
 				}, 800 * (i + 0.1),'easeOutElastic');
 			});			
 		},3800);
+
 		$("#nav-button").delay(4500).animate({			
 			 left: '90px'			
 		},1500,'easeInQuad');
@@ -277,6 +277,7 @@ function loading() {
 			bottom: '120px'
 		},1200,'easeInOutBack');		
 	},600); 
+	
 	setTimeout(function(){
 		$("body").css({
 			overflowY: 'scroll'
