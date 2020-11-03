@@ -127,7 +127,7 @@ $(function() {
 	var reviewSwiperPic = new Swiper('#review-swiper', {	  
 	  direction: 'horizontal',
 	  loop: true,	
-	  allowTouchMove: false		  
+	  allowTouchMove: false,	  
 	})
 	var reviewSwiperTxt = new Swiper('#review-swiper', {	  
 	  direction: 'horizontal',
@@ -137,16 +137,13 @@ $(function() {
 	    nextEl: '#review-swiper-next',
 	    prevEl: '#review-swiper-prev',
 	  }
-	})
-	var next = document.querySelector("#review-swiper-next");
-	  next.onclick = function() {
-	    reviewSwiperPic.slideNext(1000);
-	  }
-	var prev = document.querySelector("#review-swiper-prev");
-	  prev.onclick = function() {
-	    reviewSwiperPic.slidePrev(1000);
-	  }
-	
+	});
+
+	reviewSwiperTxt.on('slideChangeTransitionEnd', function(el) {
+		reviewSwiperPic.slideTo(el.activeIndex);
+	});
+
+
 
 }); //window로드끝
 
