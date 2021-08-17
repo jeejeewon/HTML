@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Invert values &#10072; Remove First and Last Character</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">	
+</head>
+<body>
+	<div>
+		<h4>Invert values</h4>
+		<p>숫자 집합이 주어지면 각 숫자의 가법 역수를 반환합니다.<br/>각각의 양수는 음수가 되고, 음수는 양수가 됩니다.</p>
+		<input type="text" id="a1">
+		<input type="text" id="a2">
+		<input type="text" id="a3">
+		<input type="text" id="a4">
+		<button id="submit_1">submit</button>
+		<p id="resultvalue"></p>
+		<p id="result"></p>		
+	</div>
+	<div>
+		<h4>Remove First and Last Character</h4>
+		<p>문자열의 첫 번째 문자와 마지막 문자를 제거하는 함수를 만드는 것이 목표입니다.<br/>하나의 매개 변수, 즉 원래 문자열이 주어집니다.(2자 미만의 문자열은 제외)</p>
+		<input type="text" id="str">
+		<button id="submit_2">submit</button>
+		<p id="resultstrvalue"></p>		
+	</div>
+
+	
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var resultValue = document.getElementById("resultvalue");
+			var resultStrValue = document.getElementById("resultstrvalue");
+
+			submit_1.onclick = function() {
+				var a1 = document.getElementById("a1").value;
+				var a2 = document.getElementById("a2").value;
+				var a3 = document.getElementById("a3").value;
+				var a4 = document.getElementById("a4").value;
+
+				var arr = [];
+				arr.push(eval(a1));
+				arr.push(eval(a2));
+				arr.push(eval(a3));
+				arr.push(eval(a4));	
+
+				invert(arr);
+			}
+			submit_2.onclick = function() {
+				var str = document.getElementById("str").value;
+				removeChar(str);
+			}
+			function invert(array) { 
+			  var result = array.map(function(num) {
+			    return num * -1;
+			  });
+			  return resultValue.innerText = result;
+			}
+			function removeChar(str){
+			  return resultStrValue.innerText = str.slice(1,str.length-1);
+			};
+		}
+	</script>
+
+</body>
+</html>

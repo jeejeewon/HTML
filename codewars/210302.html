@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Odd or Even?</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+	<p>
+		정수 목록이 주어지면 요소의 합이 홀수인지 짝수인지 결정합니다.<br/>
+		"홀수" 또는 "짝수"와 일치하는 문자열로 답변을 제시합니다.<br/>
+		입력 배열이 비어 있는 경우 다음을 [0](영(0)의 배열)으로 간주합니다.
+	</p>
+	<input type="text" id="a1">
+	<input type="text" id="a2">
+	<input type="text" id="a3">
+	<input type="text" id="a4">	
+	<button id="submit">submit</button>
+	<p id="resultvalue"></p>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var resultValue = document.getElementById("resultvalue");
+
+			submit.onclick = function() {
+			var a1 = document.getElementById("a1").value;
+			var a2 = document.getElementById("a2").value;
+			var a3 = document.getElementById("a3").value;
+			var a4 = document.getElementById("a4").value;
+			var arr = [];
+			arr.push(eval(a1));
+			arr.push(eval(a2));
+			arr.push(eval(a3));
+			arr.push(eval(a4));
+
+			oddOrEven(arr);
+		}
+
+		function oddOrEven(array) {   
+  			var arrSum = array.reduce(function(a, b) {
+    			return a + b;
+  			},0) //0은 initialValue(초기값)
+
+	  		if (arrSum % 2 == 0) { 
+	    		return resultValue.innerText = "짝수" 
+	  		} else { 
+	    		return resultValue.innerText = "홀수" 
+	  		}
+  		}
+	}		
+
+	//Array.reduce(callback[, initialValue]);
+	//리듀스의 callback 함수는 4개의 인수를 갖는다.
+	//1.accumulator (acc) - 누산기
+	//2.current value (cur) - 현재 값
+	//3.current index (idx) - 현재 인덱스
+	//4.array (src) - 원본 배열
+	//return값  - 누적 계산의 결과 값.
+	//참조링크 https://velog.io/@beginal/reduce%EC%99%80-%EC%9D%91%EC%9A%A9%EB%B2%95
+
+	//작동방식
+	//array.reduce(callback(accumulator, currentValue[, index[, array]] )[, initialValue])
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Keep Hydrated!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">	
+</head>
+<body>
+	<p>
+		Nathan은 자전거 타는 것을 좋아한다.<br/>
+		Nathan은 수분을 유지하는 것이 중요하다는 것을 알고 있기 때문에, 시간당 0.5리터의 물을 사이클링으로 마십니다.<br/>
+		시간은 몇 시간 내에 주어지고 Nathan은 마실 리터 수는 최소값으로 반올림해야 합니다.<br/>
+		예:<br/>
+		시간 = 3 ---->리터 = 1<br/>
+		시간 = 6.7--->리터 = 3<br/>
+		시간 = 11.8-->리터 = 5<br/>
+	</p>
+	<input id="time" type="text">
+	<button id="submit">submit</button>
+	<p id="resultvalue"></p>
+
+	<script type="text/javascript">
+		var resultValue = document.getElementById("resultvalue");
+		submit.onclick = function() {
+			var time = document.getElementById("time").value;
+			litres(time);			
+		}
+		function litres(time) {  
+ 	 		return resultValue.innerText = Math.floor(time*0.5); //Math.floor() 소수점 버림
+		}
+	</script>
+</body>
+</html>

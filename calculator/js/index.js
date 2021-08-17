@@ -16,7 +16,7 @@ window.onload = function() {
 
 	number.forEach(function(el, i) {
 		el.onclick = function() {
-			display.innerText += el.innerText; //숫자
+			display.innerText += el.innerText //숫자
 		};
 	});
 	dot.onclick = function() {
@@ -45,7 +45,8 @@ function resultValue() {
 			alert("숫자를 입력해주세요")
 		} else {
 			display.innerText = eval(count.innerText + display.innerText); //문자열을 숫자로 변환
-			empty(count)			
+			empty(count)	
+			
 		};
 };
 
@@ -54,7 +55,7 @@ function keyControl() {
 	window.addEventListener("keydown", function(winKeyEvent){
 	console.log(winKeyEvent.keyCode); //누른 키 확인
 
-	//0 - 9 : 96 - 105
+	//1 - 9 : 97 - 105
 	//엔터 : 13
 	//나누기 : 111
 	//곱하기 : 106

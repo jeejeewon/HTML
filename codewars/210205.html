@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Remove String Spaces</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">	
+</head>
+<body>
+	<p>문자열에서 공백을 제거한 다음 결과 문자열을 반환합니다.</p>
+	<input id="str" type="text">	
+	<button id="submit">submit</button>
+	<p id="resultvalue"></p>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var resultValue = document.getElementById("resultvalue");
+			submit.onclick = function() {
+				var str = document.getElementById("str").value;			
+				noSpace(str);
+			}
+
+			function noSpace(x){
+  				return resultValue.innerText = x.replace(/(\s*)/g, "") 
+			}
+
+			//정규식 참고사이트: https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/%EC%A0%95%EA%B7%9C%EC%8B%9D
+		}
+	</script>
+
+</body>
+</html>

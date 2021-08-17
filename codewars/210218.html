@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Exes and Ohs</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">	
+</head>
+<body>
+	<p>문자열의 'x'와 'o'의 양이 동일한지 확인합니다. <br/>메서드는 boolean을 반환하고 대소문자를 구분하지 않아야 합니다. 문자열은 임의의 문자를 포함할 수 있습니다.</p>
+	<pre>
+		<code>
+			XO("ooxx") => true
+			XO("xooxx") => false
+			XO("ooxXm") => true
+			XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+			XO("zzoo") => false
+		</code>
+	</pre>
+
+	<input id="xo" type="text">	
+	<button id="submit">submit</button>
+	<p id="resultvalue"></p>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var resultValue = document.getElementById("resultvalue");
+
+			submit.onclick = function() {
+				var strXo = document.getElementById("xo").value;	
+				XO(strXo);
+			}
+
+			function XO(str) {
+			  var str = str.toLowerCase(); //문자열을 소문자로 변환해서 반환
+			  var arr = str.split(''); //문자열을 배열로 저장
+			  var x = ""; //문자(저장공간 생성)
+			  var y = 4; //숫자
+			  console.log(x.__proto__);
+			  console.log(y.__proto__);
+			  var o = "";
+			  for(var i=0; i<str.length; i++) {
+			    if (str[i] === "x") {      
+			      x += str[i];			   
+			      } else if (str[i] === "x") {
+			      o += str[i];
+			      };
+			    };
+			    return resultValue.innerText = x.length === o.length;  
+			}
+		}
+		
+	</script>
+
+</body>
+</html>

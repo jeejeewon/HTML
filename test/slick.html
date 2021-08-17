@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>My Now Amazing Webpage</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="http://jeewon.dothome.co.kr/plugin/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://jeewon.dothome.co.kr/plugin/slick/slick-theme.css"/>
+</head>
+<body>
+
+<style>
+    #event_slider {
+        position: relative;
+    }
+    #event_slider>img {
+        width: 100%;
+        height: auto;
+    }
+    .swiper-container {
+        position: absolute;
+        /*width: 470px;*/
+        /*height: 686px;*/
+        /*top: 270px;*/
+        /*left: 1095px;*/
+        top: 23.28646749%;
+        right: 18.54166667%;
+        width: 24.47916667%;
+        height: 60.28119508%;
+    }
+    .swiper-wrapper, .swiper-slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .slick-slider .slick-track, .slick-slider .slick-list {
+        height: 100%; !important;
+    }
+    .swiper-slide img {
+        position: absolute;
+        top:0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90.21276596%;
+        height: 100%;
+    }
+    div[class*=my-swiper-button-] {
+        position: absolute;
+        /*width: 45px;*/
+        /*height: 45px;*/
+        width: 9.574468085%;
+        height: 6.559766764%;
+        z-index: 99;
+        background-position: top;
+        background-repeat: no-repeat;
+        top: 47%;
+        cursor: pointer;
+        outline: none;
+        background-size: 100% auto;
+    }
+    .my-swiper-button-prev {
+        background-image: url("http://carmex.shop/theme/eb4_busi_016/image/bt_L.png");
+        left: 0;
+    }
+    .my-swiper-button-next {
+        background-image: url("http://carmex.shop/theme/eb4_busi_016/image/bt_R.png");
+        right: 0;
+    }
+</style>
+
+<div id="event_slider" class="section-box section-box-1">
+    <div class="swiper-container">
+        <div class="my-swiper-button-prev"></div>
+        <div class="my-swiper-button-next"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="/page/?pid=event">
+                    <img src="http://carmex.shop/theme/eb4_busi_016/image/event_1.png" alt="event_1">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="http://carmex.shop/theme/eb4_busi_016/image/event_2.png" alt="event_2">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="http://carmex.shop/theme/eb4_busi_016/image/event_3.png" alt="event_3">
+                </a>
+            </div>
+        </div>
+    </div>
+    <img src="http://carmex.shop/theme/eb4_busi_016/image/bg.png" alt="bg">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+<!--<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+<script type="text/javascript" src="http://jeewon.dothome.co.kr/plugin/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.swiper-wrapper').slick({
+            slide: 'div',
+            dots: false,
+            prevArrow: $('.my-swiper-button-prev'),
+            nextArrow: $('.my-swiper-button-next'),
+            infinite: true,
+            speed: 3000,
+        });
+    });
+</script>
+
+</body>
+</html>
