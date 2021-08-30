@@ -35,17 +35,14 @@
 			var setArr2 = new Set(str2);
 			var arr1 = Array.from(setArr1);
 			var arr2 = Array.from(setArr2);
-
 			var i = arr1.filter(x => arr2.includes(x));
 
-			if (i.length >= str2.length) {
-				i = i.sort().join('');
-				str2 = arr2.sort().join('');
-				console.log(i);
-				console.log(str2);
-				if(i === str2) {
-					return resultValue.innerText = true;
-				}
+			i = i.sort().join('');
+			str2 = arr2.sort().join('');
+
+			if(i === str2) {
+				return resultValue.innerText = true;
+
 			} else {
 				return resultValue.innerText = false;
 			}
